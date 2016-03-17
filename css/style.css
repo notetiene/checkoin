@@ -1,2 +1,139 @@
-h1 {  }
-video { width: 100%; }
+/*h2 { padding-top: 30px; }
+h3 { padding-top: 20px; } */
+
+header {
+    position: absolute;
+}
+
+header * {
+    color: white;
+}
+
+header {
+    top: 21vw;
+    left: 3vw;
+}
+
+header h1 {
+    font-size: 10vw;
+}
+
+header p {
+    font-size: 3vw;
+}
+
+#menu {
+    font-size: 16px;
+    margin-right: 2%;
+}
+
+#menu .list-group-item {
+    padding: 0;
+    background-color: #f3fbf3;
+    border-color: #9fd89f;
+}
+
+#menu .list-group-item:hover a {
+    background-color: #539853;
+}
+
+#menu .list-group-item:hover a,
+#menu .list-group-item.active a {
+    color: white;
+}
+
+/* #menu .list-group-item {
+    background-color: transparent;
+} */
+
+#doc_info {
+    font-size: 16px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+#doc_info .label label {
+    text-decoration: underline;
+}
+
+div.container:first-of-type {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+video,
+noscript img {
+    background-color: black;
+    width: 100%;
+    display: block;
+}
+
+video {
+    display: none;
+}
+
+video.they_carry_gold {
+    position: absolute;
+}
+
+noscript video {
+    display: block;
+}
+
+#play {
+    position: absolute;
+    width: 100%;
+    height: 42vw;
+    background: transparent url(../medias/play.svg) center center no-repeat;
+    cursor: pointer;
+}
+
+.codehilite pre {
+    border: none;
+    padding: 10px 18px;
+}
+
+@media screen and (max-width: 511px) {
+
+    header {
+        top: 11vw;
+        text-align: right;
+        right: 3vw;
+        left: auto;
+    }
+
+    header p {
+        margin-top: -3vw;
+        line-height: 5vw;
+        font-size: 5vw;
+    }
+}
+
+@media screen and (min-width: 512px) {
+
+    header {
+        top: 17vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    header {
+        top: 19vw;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    header {
+        top: 20vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    header {
+        top: 21vw;
+    }
+}

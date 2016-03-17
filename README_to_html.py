@@ -18,7 +18,7 @@ version_count = commands.getstatusoutput('git log README.md | grep Author: | wc 
 version_uuid  = commands.getstatusoutput('git log README.md | cut -d " " -f2 | head -c 7')[1]
 version       = u'pre-rfc_rev%s-%s' % (version_count, version_uuid)
 
-navs = [u'<li><a href="#menu_top">Checkoin</a></li>']
+navs = []
 
 for i in range(0, len(content_html_lines)):
     line = content_html_lines[i]
@@ -26,9 +26,9 @@ for i in range(0, len(content_html_lines)):
         text = line[4:-5]
         slug = slugify(text)
         content_html_lines[i] = u'<h2 id="%s"><a name="%s"></a>%s</h2>' % (slug, slug, text)
-        navs.append(u'<li><a href="#%s">%s</a></li>' % (slug, text))
+        navs.append(u'<li class="list-group-item"><a href="#%s">%s</a></li>' % (slug, text))
 
-content_html = u'\n'.join(content_html_lines)
+content_html = u'\n'.join(content_html_lines).replace('pre-RFC_VERSION', version)
 
 body = u"""
 <header>%s</header>
@@ -36,17 +36,17 @@ body = u"""
 <div class="container">
     <div class="row">
 
-        <div class="col-md-3 hidden-sm">
+        <div class="col-md-3 hidden-xs hidden-sm">
             <div id="float_column">
                 <div id="menu" role="navigation">
-                    <ul class="nav nav-stacked" role="tablist">
+                    <ul class="nav list-group table-of-contents" role="tablist">
                         %s
                     </ul>
                 </div>
                 <div id="doc_info">
-                    <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="medias/cc-by-nd_88x31.png" /></a>
+                    <label class="label label-primary">Version</label><span class="label label-default">%s</span>
                     <br />
-                    <span><label>Version:</label> %s</span>
+                    <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="medias/cc-by-nd_88x31.png" /></a>
                 </div>
             </div>
         </div>
