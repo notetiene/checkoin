@@ -48,4 +48,7 @@ jQuery(document).ready(function($) {
     $(window).resize(window_resize);
 
     $(window).on('scroll', scroll);
+
+    $('h4').nextUntil('h4,h3,h2,h1').addClass('h4-siblings');
+    $('strong:contains(before)').addClass('info');
 });

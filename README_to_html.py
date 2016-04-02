@@ -10,7 +10,8 @@ title   = u'\n'.join(readme[0:2])
 content = u'\n'.join(readme[3:])
 footer  = open('footer.html').read().decode('utf-8')
 
-title_html   = markdown2.markdown(title)
+title_html = markdown2.markdown(title).replace('<h1', '<h1 id="top"')
+
 content_html = markdown2.markdown(content, extras=['fenced-code-blocks'])
 content_html_lines = content_html.split('\n')
 
@@ -18,17 +19,41 @@ version_count = commands.getstatusoutput('git log README.md | grep Author: | wc 
 version_uuid  = commands.getstatusoutput('git log README.md | cut -d " " -f2 | head -c 7')[1]
 version       = u'pre-rfc_rev%s-%s' % (version_count, version_uuid)
 
-navs = []
+navs = [u'<li class="list-group-item"><a href="#top">Checkoin</a></li>']
+defs = []
 
+current_h = None
 for i in range(0, len(content_html_lines)):
     line = content_html_lines[i]
-    if line.startswith('<h2>') and line.endswith('</h2>'):
+    line_strip = line.strip()
+    if line.startswith(u'<h'):
+        h = line[1:3]
         text = line[4:-5]
         slug = slugify(text)
-        content_html_lines[i] = u'<h2 id="%s"><a name="%s"></a>%s</h2>' % (slug, slug, text)
-        navs.append(u'<li class="list-group-item"><a href="#%s">%s</a></li>' % (slug, text))
+        current_h = slug
+        defs.append((text, slug,))
+        content_html_lines[i] = u'<%s id="%s"><a name="%s"></a>%s</%s>' % (h, slug, slug, text, h)
+        if h == u'h2':
+            navs.append(u'<li class="list-group-item"><a href="#%s">%s</a></li>' % (slug, text))
+    if line_strip.startswith(u'<li><code>'):
+        slug = u"%s__%s" % (current_h, line_strip[10:].split(u'</code>')[0])
+        content_html_lines[i] = line.replace(u'<li><code>', u'<li><a name="%s"></a><code>' % slug)
 
-content_html = u'\n'.join(content_html_lines).replace('pre-RFC_VERSION', version)
+responsive_images = (u'medias/scan.gif',)
+
+content_html = u'\n'.join(content_html_lines)
+content_html = content_html.replace(u'pre-RFC_VERSION', version)
+
+for i in responsive_images:
+    content_html = content_html.replace(
+        u'<img src="%s"' % i,
+        u'<img src="%s" class="img-responsive"' % i
+    )
+
+for d in defs:
+    text, slug = d
+    content_html = content_html.replace(u'<em>%s</em>' % text, u'<em><a href=#%s>%s</a></em>' % (slug, text,))
+    content_html = content_html.replace(u'<em>%ss</em>' % text, u'<em><a href=#%s>%ss</a></em>' % (slug, text,)) # Plural
 
 body = u"""
 <header>%s</header>
@@ -44,9 +69,10 @@ body = u"""
                     </ul>
                 </div>
                 <div id="doc_info">
-                    <label class="label label-primary">Version</label><span class="label label-default">%s</span>
-                    <br />
                     <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="medias/cc-by-nd_88x31.png" /></a>
+                    <br />
+                    <label class="label label-primary">Version</label><span class="label label-default">%s</span>
+                    <a id="twitter" href="https://twitter.com/checkoin">@checkoin</a>
                 </div>
             </div>
         </div>
