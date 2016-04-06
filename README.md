@@ -568,8 +568,15 @@ Once *Checkoin* will be up and running, and after a period of observation, *Chec
 
 ## Authors
 
-- Camille Harang, [senior developer](https://www.hopwork.fr/profile/camilleharang).
+- [Camille Harang](https://www.hopwork.fr/profile/camilleharang), (senior developer).
 
 ## Thanks
 
 - [Gandi](https://www.gandi.net/), for hosting (no bullshit™ Bitcoin domain name and hosting services).
+- [The Corbett Report](https://www.corbettreport.com/), for inspiration (Open Source Intelligence News).
+- [@rachelrepeat](https://twitter.com/rachelrepeat), for inspiration.
+- [@pachinee](https://twitter.com/pachinee), for support.
+- [@kouzkouzrabbit](https://twitter.com/kouzkouzrabbit), for support.
+- [@Carole_Fabre](https://twitter.com/Carole_Fabre), for support ([French Movement for a Basic Income](http://revenudebase.info/) & [uCoin](http://en.ucoin.io/)).
+- Chris Thorpe, for support ([Positive Money France](http://monnaiehonnete.net/)).
+- Mom, for support.
