@@ -20,17 +20,22 @@ jQuery(document).ready(function($) {
         $('html').css('overflow-y', '');
         $('body').css('overflow-y', '');
 
+
         if(w > 768) {
-            $('video.hd').css('display', 'block');
-            $('video.hd').get(0).play();
-            $('video.hd').get(1).load();
             $('video.small').hide();
+            $('video.hd').css('display', 'block');
         } else {
             $('video.hd').hide();
             $('video.small').css('display', 'block');
-            $('video.small').get(0).play();
-            $('video.small').get(1).load();
         }
+
+        $('.tuco_bites_coin:visible').get(0).play();
+        $('.they_carry_gold:visible').get(0).load();
+
+        $('video:visible').each(function(k, v) {
+            $(v).height($(v).width()*.425);
+            // 0.425
+        });
 
         scroll();
     }
@@ -43,6 +48,14 @@ jQuery(document).ready(function($) {
         $('.they_carry_gold:visible').off(play_show);
         $('.they_carry_gold:visible').on('ended', play_show);
     });
+
+    // Chrome for smartphones requires user interaction to play medias.
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
+       /Chrome/i.test(navigator.appVersion)) {
+        $('body').on('tap click swipe', function() {
+            $('.tuco_bites_coin:visible').get(0).play();
+        });
+    }
 
     window_resize();
     $(window).resize(window_resize);

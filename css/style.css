@@ -16,7 +16,7 @@ header h1 {
 }
 
 header p {
-    font-size: 2.85vw;
+    font-size: 3.1vw;
 }
 
 h2 { padding-top: 20px; }
@@ -95,6 +95,8 @@ div.container:first-of-type {
 video,
 noscript img {
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 100%;
     display: block;
 }
@@ -105,6 +107,20 @@ video {
 
 video.they_carry_gold {
     position: absolute;
+}
+
+video.tuco_bites_coin.hd {
+    background-image: url(../medias/tuco_bites_coin.jpg);
+}
+video.tuco_bites_coin.small {
+    background-image: url(../medias/tuco_bites_coin_small.jpg);
+}
+
+video.they_carry_gold.hd {
+    background-image: url(../medias/they_carry_gold.jpg);
+}
+video.they_carry_gold.small {
+    background-image: url(../medias/they_carry_gold_small.jpg);
 }
 
 noscript video {
@@ -137,7 +153,7 @@ noscript video {
     header p {
         margin-top: 6vw;
         line-height: 5vw;
-        font-size: 5vw;
+        font-size: 5.3vw;
     }
 }
 
