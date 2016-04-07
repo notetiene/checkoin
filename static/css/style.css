@@ -75,7 +75,7 @@ h3 a, h4 a, h5 a {
 
 #doc_info #twitter {
     font-size: 26px;
-    background: transparent url(../../medias/twitter.svg) left center no-repeat;
+    background: transparent url(../../media/twitter.svg) left center no-repeat;
     background-size: 38px;
     padding-left: 41px;
     display: block;
@@ -110,17 +110,17 @@ video.they_carry_gold {
 }
 
 video.tuco_bites_coin.hd {
-    background-image: url(../../medias/tuco_bites_coin.jpg);
+    background-image: url(../../media/tuco_bites_coin.jpg);
 }
 video.tuco_bites_coin.small {
-    background-image: url(../../medias/tuco_bites_coin_small.jpg);
+    background-image: url(../../media/tuco_bites_coin_small.jpg);
 }
 
 video.they_carry_gold.hd {
-    background-image: url(../../medias/they_carry_gold.jpg);
+    background-image: url(../../media/they_carry_gold.jpg);
 }
 video.they_carry_gold.small {
-    background-image: url(../../medias/they_carry_gold_small.jpg);
+    background-image: url(../../media/they_carry_gold_small.jpg);
 }
 
 noscript video {
@@ -131,7 +131,7 @@ noscript video {
     position: absolute;
     width: 100%;
     height: 42vw;
-    background: transparent url(../../medias/play.svg) center center no-repeat;
+    background: transparent url(../../media/play.svg) center center no-repeat;
     cursor: pointer;
 }
 
