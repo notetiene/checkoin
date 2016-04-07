@@ -14,7 +14,7 @@ In its current form Checkoin is a technical proposal for the standardization of 
 ## How it works
 Additionally to the *Sealed Cashing Data* common to most physical cryptocoins, *Checkoin* *Coins* present a *Visible Scan Data* on their outer surface. When a user gets a *Coin* handed to him/her, the user *Scans* the *Visible Scan Data* of the *Coin* with a *Blacklight* application (or device) to check the *Coin*.
 
-[![Blacklight Scan Animation](medias/scan.gif)](medias/scan.gif)
+[![Blacklight Scan Animation](media/scan.gif)](media/scan.gif)
 
 Then, the *Blacklight* retrieves information (via its server) from the *Network* about the *Coin*, and [cryptographically](#coin__encrypted_signature) authenticates it (using the *Visible Scan Data*'s *Passphrase* which is **never** sent anywhere outside of the *Blacklight*). If the authentication successes the *Blacklight*'s server performs data analysis about the *Coin* to be displayed on the *Blacklight*. Especially about the consistency of the geolocation and timing of the previous *Scans*' lineage. Indeed, if the *Coin* has been subjected to counterfeiting with its *Visible Scan Data* being copied, it means that there are multiple counterfeited “coins” that will be scanned at different locations and time, which will quickly become inconsistent with the frequency of exchanges and geographical distance between the *Blacklights*.
 
