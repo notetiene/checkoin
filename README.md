@@ -41,10 +41,10 @@ Then, unless the user has requested an “silent scan”, a new *Scan* record of
 ### Notes
 - Even if the “user” is alluded to in this document for practical reasons, there is no such thing as a “user” in the definitions nor data model of these specifications, for obvious privacy reasons. The only identified endpoint of *Checkoin* for the “end user” is the well established *Blacklight* server manager's *Account*. Any *Checkoin* component is forbidden to require (coercively or not) any “end user” to identify with an *Account* under any circumstance.
 - The *Sealed Cashing Data* is not limited to cryptocurrencies, there is no reason for such limitation, and it facilitate the diversification of assets in peoples' pockets/portfolios which enforces economical security, other *Asset Types* could be:
-    - a [BitGold](https://www.bitgold.com/) coupon,
     - Air Miles,
     - a stock of vintage wine or [parmesan](https://www.rt.com/business/331290-parmesan-italy-bank-bonds/) listed on a stock exchange,
     - a coupon for the local grocery store (then the *Blacklight* should display the value of the asset according to the location, it is likely to value 0 half way around the world)
+    - a [BitGold](https://www.bitgold.com/) coupon (or the gold nugget itself, indeed if the asset is small enough, transportable ans securely sealed it can replace the content of the *Sealed Cashing Data*),
     - etc.
 - If the *Visible Scan Data* of a *Coin* gets leaked on the Internet, or if a previous user kept note of it, there is the possibility of an attack on this *Coin*'s integrity by making multiple forged scans with inconsistent time and location. This is unlikely to happen except for gratuitous malice or retaliation (e.g. an angry customer), but if the *Coin* integrity gets damaged, it still has the value of the asset it holds, so, the damage is limited. Such an attack would be like smashing a Philharmonic gold coin with a hammer, it loose some of its value, but it's still gold. Furthermore, such attacks could be intercepted by the *Blacklights*' servers with some pattern analysis.
 - The circulation of *Coins* passed from hand to hand can speed up the transaction process and relieve the traffic congestion on saturated cryptocurrencies like Bitcoin.
