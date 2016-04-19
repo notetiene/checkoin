@@ -51,6 +51,24 @@ Then, unless the user has requested an “silent scan”, a new *Scan* record of
 - Checkoin is more resilient against Internet failure/censorship than cryptocurrencies. Indeed, it doesn't require worldwide write access to allow exchanges to take place, the only writing that happens during an exchange is the *Scan*, which is by design optional (“silent scan”) and can be replicated on the *Network* later on when Internet is restored (via the second *Pool* layer). In case of Internet failure/censorship any database backup of the *Checkoin* *Network* (including [media ressources](#model__illustrations)) can operate in a local standalone mode (or within a regional [LAN](https://en.wikipedia.org/wiki/Local_area_network)), with a reasonable short/middle term reliability before slowly deteriorating. Indeed, it will eventually suffer a lack of remote *Scan* data at some point (especially if operating outside of a LAN) and ignore *Coins* newly minted after the connexion loss. But only few minutes of sporadic Internet connexion some days in the week for synchronizing could keep it alive in the long term.
 - There will always be counterfeiters, but *Checkoin* makes it quite dissuasive and unworthy. Also, one of the reasons why counterfeiting has been so tempting in history of mankind is the monopoly on money supply, and artificial scarcity typical to economies of perpetual crisis. But with *Checkoin* there is no such monopoly, it's an economy of abundance, anyone able to manufacture fake “coins” can more easily become a legit *Minter*, which might also reduce this temptation.
 
+### Examples of *Coins*
+
+#### Printed circuit with a [key signing microchip](#coin__public_key)
+
+[![Printed Circuit Coin](media/coin_circuit.png)](media/coin_circuit.png)
+
+#### Vintage wine stock
+
+[![Vintage Wine Coin](media/coin_vin.jpg)](media/coin_vin.jpg)
+
+#### Handcrafted
+
+[![Handcrafted Coin](media/coin_kraft.jpg)](media/coin_kraft.jpg)
+
+#### Physical gold micro-nuggets
+
+[![Gold Coin](media/coin_gold.png)](media/coin_gold.png)
+
 ## Definitions
 
 ### Network
