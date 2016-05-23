@@ -39,6 +39,24 @@ h3 a, h4 a, h5 a {
     text-decoration: underline;
 }
 
+div p:first-of-type {
+    background-color: #F5EFEB;
+    font-size: 24px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+}
+
+div p:first-of-type:before {
+    content: "in a nutshell…";
+    display: block;
+    font-size: 20px;
+    line-height: 60px;
+    padding-left: 80px;
+    margin-bottom: 10px;
+    color: #005800;
+    background: transparent url(../../media/nutshell.png) left center no-repeat;
+}
+
 #menu {
     font-size: 16px;
     margin-right: 2%;

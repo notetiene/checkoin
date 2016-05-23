@@ -1,6 +1,8 @@
 # Checkoin
 Open standard to secure the circulation of physical crypto-cash/coins.
 
+Checkoin allows the hand to hand circulation of physical mediums that holds "something" (for example a secret information). Guaranteeing to the person receiving it that the medium is indeed the uniquely identified medium that it pretends to be, that it has not been counterfeited nor copied, and that what it holds hasn't been tampered with nor unveiled by anyone before. Checkoin was initially designed for the offline circulation of cryptocurrencies, but is not limited to it.
+
 [Physical cryptocoins (or cryptocash)](https://en.bitcoin.it/wiki/Physical_bitcoin) are mediums of exchange holding sealed [cold storage](https://en.bitcoin.it/wiki/Cold_storage) information for cashing cryptocurrencies (or more generally any redeemable asset). As Bitcoin addressed the digital currency's issue of double-spending, Checkoin aims to address the issues of the hand to hand circulation of physical cryptocoins (geolocation, counterfeiting, altering, copying, etc.), while protecting the freedom and anonymity of the users.
 
 It allows to check the integrity of physical cryptocoins without having to break their sealing, with a high level of trust and ease, like checking a banknote under a UV blacklight. Thus, they can circulate safely, by hand from peer-to-peer, until they eventually get cashed by having their irreversible sealing opened, then trashed.
