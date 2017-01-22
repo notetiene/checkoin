@@ -171,6 +171,7 @@ A record on the *Network* providing information about the reliability an of an e
     - *Minters*,
     - *Blacklight* fabricators,
     - *Blacklight* *[Server Managers](#scan__blacklight_server)*,
+    - *[Sealers](#coin__sealer)*,
     - *[Asset Producers](#model__asset_producer)*,
     - *[Asset Suppliers](#model__asset_supplier)*,
     - *[Asset Managers](#model__asset_manager)*,
@@ -257,9 +258,6 @@ Example of a Model record:
  "uuid": "12345678-901234567-8901-234567890123",
  "minter": "0x3333[…]44444",
  "name": "0.05Ƀ Limited Red Watermark",
- "asset_type": "10101010-101010101-0101-010101010101",
- "quantity": 0.05,
- "cashing_method": "armory",
  "date": "2016-03-23",
  "illustrations": [
     {
@@ -278,6 +276,11 @@ Example of a Model record:
     },
  ],
 
+// Mandatory, or must have homologue fields for each Coin of this Model.
+ "asset_type": "10101010-101010101-0101-010101010101",
+ "quantity": 0.05,
+ "cashing_method": "armory",
+
 // Optional
  "check_info": {
      "en_GB": "Look the watermark through a light.",
@@ -292,6 +295,8 @@ Example of a Model record:
  "asset_supplier": "0x3344[…]33443",
  "asset_manager": "0x5566[…]55665",
  "asset_vault": "0x7788[…]77887",
+ "returnable": true,
+
 // Free
 […]
 }
@@ -324,8 +329,7 @@ Optional fields:
 - ```asset_supplier```: the *Account* address of the entity that is supplying the asset,
 - ```asset_manager```:  the *Account* address of the entity that is managing the asset,
 - ```asset_vault```: the *Account* address of the entity that is safekeeping the asset,
-
-
+- ```returnable```: boolean indicating if *Coins* of this Model can be returned/refunded to the *Minter* after being cashed (for *Coins* which are not physically destroyed after having their sealing opened, e.g. for read-once self-erasing microchip),
 
 Any other field can be freely added, please [contribute](#crowdsourcing) to help improving and standardizing them.
 
@@ -359,13 +363,36 @@ Example of a Coin record:
  "preloaded": false,
  "encrypted_signature": "GfAlfjuWnPeAhBy+cn3/bAddbzJU8e2AR0U126VFD3g=",
 
-// Optional
- "quantity": 0.01,
- "expiry_date": "2018-03-14T04:53:32",
- "returnable": true,
- "public_key": "0x2222[…]11011",
+// Mandatory if homologue fields on the Coin's Model are absent.
+ "asset_type": "10101010-101010101-0101-010101010101",
+ "cashing_method": "armory",
 
-// Free
+// Mandatory if one or more above homologue fields are set.
+ "sealer": "0x7788[…]19735",
+
+// Optional if homologue fields on the Coin's Model are present, mandatory if absent.
+ "quantity": 0.01,
+
+// Optional but depends on `sealer` to be set.
+ "name": "0.01Ƀ.",
+ "description": "Coin holding 0.01Ƀ.",
+ "guarantee_duration": 500,
+ "url": "http://youcoin.io/models/001BTC/",
+ "asset_producer": "0x2211[…]22112",
+ "asset_supplier": "0x3344[…]33443",
+ "asset_manager": "0x5566[…]55665",
+ "asset_vault": "0x7788[…]77887",
+ "returnable": false,
+
+// Optional
+ "expiry_date": "2018-03-14T04:53:32",
+ "public_key": "0x2222[…]11011",
+ "check_info": {
+     "en_GB": "Do something.",
+     "fr_FR": "Faire quelque chose."
+ },
+
+// Free, except for homologue fields on the Coin's Model.
 […]
 }
 ```
@@ -375,21 +402,36 @@ Mandatory fields:
 - ```checkoin_version```: the version of the *Checkoin* specifications followed to mint the Coin,
 - ```uuid```: the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) of the Coin,
 - ```model```: the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) of the *Model* of the Coin,
-- ```date```: ISO 8601 timestamp of the minting of the Coin,
+- ```date```: ISO 8601 timestamp of the minting/sealing of the Coin,
 - ```asset_pointer```: a string indicating where the asset is located (typically a cryptocurrency address),
 - ```preloaded```: boolean indicating if the Coin was provided by the *Minter* with the asset present at the ```asset_pointer``` (e.g. “US government” “forbids” to sell preloaded cryptocoins, it has to be loaded later on by the user),
-- ```encrypted_signature```: *Minter*'s signature of all the other fields (mandatory, optional and free) alphabetically ordered and serialized in a non-indented JSON string, then encrypted with the *Visible Scan Data*'s *Passphrase* of the Coin. So the holder of the Coin can prove he/she is physically holding it by making the *Blacklight* decoding the signature and make it match by the *Blacklight*'s server.
+- ```encrypted_signature```: *Minter*'s signature of all the other fields (mandatory, optional and free) alphabetically ordered and serialized in a non-indented JSON string, then encrypted with the *Visible Scan Data*'s *Passphrase* of the Coin. So the holder of the Coin can prove he/she is physically holding it by making the *Blacklight* decoding the signature and make it match by the *Blacklight*'s server,
+- if homologue fields on the Coin's *Model* are absent:
+ -  ```asset_type```: see [homologue field](#model__asset_type) on the *Model*,
+ -  ```cashing_method```: see [homologue field](#model__cashing_method) on the *Model*,
+- if one or more above homologue fields are set:
+ -  ```sealer```: the *Account* of the entity that places the *Asset* into the *Coin* and seals it, if not performed by the *Minter*.
 
 Optional fields:
 
-- ```quantity```: decimal number representing the quantity of *Asset Type* held by the Coin, if present it overrides the *Model*'s ```quantity``` field,
 - ```expiry_date```: ISO 8601 timestamp recommended by the *Minter* to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,
-- ```returnable```: boolean indicating if the *Coin* can be returned/refunded to the *Minter* after being cashed (for *Coins* which are not physically destroyed after having their sealing opened, e.g. for read-once self-erasing microchip),
-- ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication.
+- ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,
+- if homologue fields on the Coin's *Model* are present, mandatory if absent:
+ - ```quantity```: decimal number representing the quantity of *Asset Type* held by the Coin, if *Model*'s homologue field is present it overrides it otherwise it becomes mandatory,
+- but depends on [```sealer```](#coin__sealer) to be set:
+ - ```name```: completes [homologue field](#model__name) on the *Model*,
+ - ```description```: completes [homologue field](#model__description) on the *Model*,
+ - ```guarantee_duration```: overrides [homologue field](#model__guarantee_duration) on the *Model*, guarantee is then handled by the *[Sealer](#coin__sealer)*,
+ - ```url```: completes [homologue field](#model__url) on the *Model*,
+ - ```asset_producer```: overrides [homologue field](#model__asset_producer) on the *Model*,
+ - ```asset_supplier```: overrides [homologue field](#model__asset_supplier) on the *Model*,
+ - ```asset_manager```: overrides [homologue field](#model__asset_manager) on the *Model*,
+ - ```asset_vault```: overrides [homologue field](#model__asset_vault) on the *Model*,
+ - ```returnable```: overrides [homologue field](#model__returnable) on the *Model*, return is then handled by the *[Sealer](#coin__sealer)*.
 
-The communication protocol between the *Blacklight* and the microchip (for key signing and read-once self-erasing) isn't covered by these specifications, but it is likely to become a separated document.
+The communication protocol between the *Blacklight* and the microchip (for key signing and read-once self-erasing) isn't covered by these specifications, but it is likely to become a separated document. Other functions could be added to such microchips (e.g. holding the cryptocurrency's private key in memory instead of having it printed on the *Coin*, read-once auto-erased cryptocurrency's private key, self-generating cryptocurrency's private key so the *Minter* can never have access to it, etc.).
 
-Any other field can be freely added, please [contribute](#crowdsourcing) to help improving and standardizing them.
+Any other field can be freely added, except for homologue fields on the Coin's *Model*, please [contribute](#crowdsourcing) to help improving and standardizing them.
 
 Optionally, a Coin record can be made private by having all its fields (except ```checkoin_version```, ```uuid``` and ```encrypted_signature```) serialized into a JSON string encrypted with the *Visible Scan Data*'s *Passphrase* of the Coin, then nested into the ```encrypted``` field. However it might slow down the *Scan* process as the *Blacklight* will have to decrypt it for the *Blacklight*'s server.
 
@@ -588,15 +630,19 @@ Once *Checkoin* will be up and running, and after a period of observation, *Chec
 
 ## Authors
 
-- [Camille Harang](https://www.hopwork.fr/profile/camilleharang), (senior developer).
+- [Camille Harang](https://www.hopwork.fr/profile/camilleharang) (senior developer).
+- Santiago.
 
 ## Thanks
 
-- [Gandi](https://www.gandi.net/), for hosting (no bullshit™ Bitcoin domain name and hosting services).
+- [Gandi](https://www.gandi.net/), for hosting (*no bullshit™* Bitcoin domain name and hosting services).
 - [The Corbett Report](https://www.corbettreport.com/), for inspiration (Open Source Intelligence News).
 - [@rachelrepeat](https://twitter.com/rachelrepeat), for inspiration.
 - [@pachinee](https://twitter.com/pachinee), for support.
 - [@kouzkouzrabbit](https://twitter.com/kouzkouzrabbit), for support.
-- [@Carole_Fabre](https://twitter.com/Carole_Fabre), for support ([French Movement for a Basic Income](http://revenudebase.info/) & [uCoin](http://en.ucoin.io/)).
+- [@Carole_Fabre](https://twitter.com/Carole_Fabre), for support ([French Movement for a Basic Income](http://revenudebase.info/) & [Duniter](http://duniter.fr/)).
 - Chris Thorpe, for support ([Positive Money France](http://monnaiehonnete.net/)).
 - Mom, for support.
+- [Michel Bauwens](http://wiki.p2pfoundation.net/Michel_Bauwens), for [promoting](https://twitter.com/mbauwens/status/718080947124572161) and [advise](https://twitter.com/mammique/status/759030177670148097) (P2P Foundation).
+- [Roger Ver](https://rogerver.com/), for [promoting](https://forum.bitcoin.com/viewtopic.php?t=6935&p=20285) (Bitcoin Jesus).
+- [mineoncloud](https://mineoncloud.com/en/), for advise.
