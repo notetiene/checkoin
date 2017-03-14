@@ -647,5 +647,5 @@ Originally *Checkoin* is not a currency, just a physical transport layer for thi
 - [Michel Bauwens](http://wiki.p2pfoundation.net/Michel_Bauwens), for [promoting](https://twitter.com/mbauwens/status/718080947124572161) and [advise](https://twitter.com/mammique/status/759030177670148097) (P2P Foundation).
 - [Roger Ver](https://rogerver.com/), for [promoting](https://forum.bitcoin.com/viewtopic.php?t=6935&p=20285) (Bitcoin Jesus).
 - [MineOnCloud](https://mineoncloud.com/en/), for advise.
-- Dorothee, for voice-over.
 - [Alasso](https://twitter.com/AlassoAsso), for voice-over.
+- Dorothee, for voice-over.

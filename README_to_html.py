@@ -39,11 +39,11 @@ for i in range(0, len(content_html_lines)):
         slug = u"%s__%s" % (current_h, line_strip[10:].split(u'</code>')[0])
         content_html_lines[i] = line.replace(u'<li><code>', u'<li><a name="%s"></a><code>' % slug)
 
-responsive_images = (u'media/scan.gif',
-                     u'media/coin_circuit.png',
-                     u'media/coin_vin.jpg',
-                     u'media/coin_kraft.jpg',
-                     u'media/coin_gold.png')
+responsive_images = (u'/media/scan.gif',
+                     u'/media/coin_circuit.png',
+                     u'/media/coin_vin.jpg',
+                     u'/media/coin_kraft.jpg',
+                     u'/media/coin_gold.png')
 
 content_html = u'\n'.join(content_html_lines)
 content_html = content_html.replace(u'pre-RFC_VERSION', version)
@@ -73,7 +73,7 @@ body = u"""
                     </ul>
                 </div>
                 <div id="doc_info">
-                    <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="media/cc-by-nd_88x31.png" /></a>
+                    <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="/media/cc-by-nd_88x31.png" /></a>
                     <br />
                     <label class="label label-primary">Version</label><span class="label label-default">%s</span>
                     <a id="twitter" href="https://twitter.com/checkoin">@checkoin</a>
