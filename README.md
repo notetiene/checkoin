@@ -46,7 +46,7 @@ Then, unless the user has requested an “silent scan”, a new *Scan* record of
     - Air Miles,
     - a stock of vintage wine or [parmesan](https://www.rt.com/business/331290-parmesan-italy-bank-bonds/) listed on a stock exchange,
     - a coupon for the local grocery store (then the *Blacklight* should display the value of the asset according to the location, it is likely to value 0 half way around the world)
-    - a [BitGold](https://www.bitgold.com/) coupon (or the gold nugget itself, indeed if the asset is small enough, transportable and securely sealed it can replace the content of the *Sealed Cashing Data*),
+    - a [Goldmoney](https://www.goldmoney.com/) coupon (or the gold nugget itself, indeed if the asset is small enough, transportable and securely sealed it can replace the content of the *Sealed Cashing Data*),
     - etc.
 - If the *Visible Scan Data* of a *Coin* gets leaked on the Internet, or if a previous user kept note of it, there is the possibility of an attack on this *Coin*'s integrity by making multiple forged scans with inconsistent time and location. This is unlikely to happen except for gratuitous malice or retaliation (e.g. an angry customer), but if the *Coin* integrity gets damaged, it still has the value of the asset it holds, so, the damage is limited. Such an attack would be like smashing a Philharmonic gold coin with a hammer, it loose some of its value, but it's still gold. Furthermore, such attacks could be intercepted by the *Blacklights*' servers with some pattern analysis.
 - The circulation of *Coins* passed from hand to hand can speed up the transaction process and relieve the traffic congestion on saturated cryptocurrencies like Bitcoin.
@@ -310,7 +310,7 @@ Mandatory fields:
 - ```name```: the name of the Model,
 - ```asset_type```: the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) of the *Asset Type* held by each *Coin* of this Model,
 - ```quantity```: decimal number representing the quantity of *Asset Type* held by each *Coin* of this Model, this field can be overridden by the same [```quantity```](#coin__quantity) field of the *Coin* if present,
-- ```cashing_method```: a slug representing the method to be used to cash *Coins* of this Model (e.g. "armory", "pub\_priv\_keys", "bitgold\_coupon", etc.),
+- ```cashing_method```: a slug representing the method to be used to cash *Coins* of this Model (e.g. "armory", "pub\_priv\_keys", "goldmoney\_coupon", etc.),
 - ```date```: ISO 8601 timestamp of the date of the Model,
 - ```illustrations```: a list of media resource(s) that illustrate this Model of *Coin*, media resource fields are:
     - ```mime```: the mime type of the media (mandatory),
@@ -597,7 +597,8 @@ Donation methods:
 
 - **Bitcoin**:  1P89rsq6HxAPSi3CAaFEEagdqWbe2T6imc
 - **Ether**: 0x1b526A1c151a5803597a8bc04cd1230a5bF2CB38
-- **BitGold**: mammique@garbure.org (preferably Singapore or Zurich vaults if possible)
+- **Goldmoney**: mammique@garbure.org (preferably Singapore or Zurich vaults if possible)
+- **PayPal**: mammique@gmail.com
 
 #### Rewards
 
@@ -613,10 +614,10 @@ The rewards will be defined and adjusted in an empirical manner. I (Camille Hara
 Please [contribute](#crowdsourcing) to propose reward(s) you would like to receive. It can be anything as long as it doesn't threat to jeopardize or alter the project (e.g. technological security or privacy disruptions, unclear conflict of interest, etc.),
 
 ##### → Your Checkoin service or product highlighted
-The website [checkoin.org](https://checkoin.org/) will list upon request any service or product related to *Checkoin* (*Blacklights*, *Models*, *Minters*, *Auditors*, market places for *Coins*, [Asset Producers](#model__asset_producer), [Asset Suppliers](#model__asset_supplier), [Asset Managers](#model__asset_manager), [Asset Vaults](#model__asset_vault), etc.), but the donors' products and services will be highlighted on the top of the lists. The duration and position of the highlight will depend of the donor's choice, according to the amount and of the donation (with a maximum of 3 years for the highest donation), and starts whenever the donor decides so.
+The website [checkoin.org](https://checkoin.org/) will list upon request any service or product related to *Checkoin* (*Blacklights*, *Models*, *Minters*, *Auditors*, market places for *Coins*, [Asset Producers](#model__asset_producer), [Asset Suppliers](#model__asset_supplier), [Asset Managers](#model__asset_manager), [Asset Vaults](#model__asset_vault), etc.), but the donors' products and services will be highlighted on the top of the lists. If you want your company to become the CoinBase-like or BitPay-like of the *Checkoin*'s ecosystem, this highlight might be the competition advantage that'll make the difference. The duration and position of the highlight will depend of the donor's choice, according to the amount and of the donation (with a maximum of 3 years for the highest donation), and starts whenever the donor decides so.
 
 ##### → [Seigniorage](https://en.wikipedia.org/wiki/Seigniorage) on the future *Checkoin*'s currency money supply
-Once *Checkoin* will be up and running, and after a period of observation, *Checkoin* will research and develop a currency that will be specifically dedicated to physical cryptocoins (likely to run upon the technology running *Chain*), and tailor made to the specificities of *Checkoin* and its ecosystem. For example, its value could be expression of the average of all the circulating assets, and be proposed as the stable currency of reference for stating prices on *Blacklights*, price tags, etc. This currency will be independent from *Checkoin*, or autonomous (e.g. definitive smart contracts), its money supply and eventual growth are to be defined, please [contribute](#crowdsourcing) to propose other features and characteristics for this future currency. The donors will have a [seigniorage](https://en.wikipedia.org/wiki/Seigniorage) privilege on the initial money supply of this currency, proportionally to the amount and timing of their donation.
+Originally *Checkoin* is not a currency, just a physical transport layer for third party assets. However, once *Checkoin* will be up and running, and after a period of observation, *Checkoin* will research and develop a new currency that will be specifically dedicated to physical cryptocoins (likely to run upon the technology running *Chain*), and tailor made to the specificities of *Checkoin* and its ecosystem. For example, its value could be expression of the average of all the circulating assets, and be proposed as the stable currency of reference for stating prices on *Blacklights*, price tags, etc. This currency will be independent from *Checkoin*, or autonomous (e.g. definitive smart contracts), its money supply and eventual growth are to be defined, please [contribute](#crowdsourcing) to propose other features and characteristics for this future currency. The donors will have a [seigniorage](https://en.wikipedia.org/wiki/Seigniorage) privilege on the initial money supply of this currency, proportionally to the amount and timing of their donation.
 
 ## Roadmap
 
@@ -637,7 +638,7 @@ Once *Checkoin* will be up and running, and after a period of observation, *Chec
 
 - [Gandi](https://www.gandi.net/), for hosting (*no bullshit™* Bitcoin domain name and hosting services).
 - [The Corbett Report](https://www.corbettreport.com/), for inspiration (Open Source Intelligence News).
-- [@rachelrepeat](https://twitter.com/rachelrepeat), for inspiration.
+- [@rachelrepeat](https://twitter.com/empathysays), for inspiration.
 - [@pachinee](https://twitter.com/pachinee), for support.
 - [@kouzkouzrabbit](https://twitter.com/kouzkouzrabbit), for support.
 - [@Carole_Fabre](https://twitter.com/Carole_Fabre), for support ([French Movement for a Basic Income](http://revenudebase.info/) & [Duniter](http://duniter.fr/)).
@@ -645,4 +646,6 @@ Once *Checkoin* will be up and running, and after a period of observation, *Chec
 - Mom, for support.
 - [Michel Bauwens](http://wiki.p2pfoundation.net/Michel_Bauwens), for [promoting](https://twitter.com/mbauwens/status/718080947124572161) and [advise](https://twitter.com/mammique/status/759030177670148097) (P2P Foundation).
 - [Roger Ver](https://rogerver.com/), for [promoting](https://forum.bitcoin.com/viewtopic.php?t=6935&p=20285) (Bitcoin Jesus).
-- [mineoncloud](https://mineoncloud.com/en/), for advise.
+- [MineOnCloud](https://mineoncloud.com/en/), for advise.
+- Dorothee, for voice-over.
+- [Alasso](https://twitter.com/AlassoAsso), for voice-over.
