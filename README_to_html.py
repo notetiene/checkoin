@@ -89,6 +89,5 @@ body = u"""
 </div>
 """ % (title_html, u'\n                    '.join(navs), version, content_html)
 
-render = u'\n'.join((header, body, footer))
-
-open('index.html', 'w').write(render.encode('utf-8'))
+home = u'\n'.join((header, body, footer))
+open('home.html', 'w').write(home.encode('utf-8'))

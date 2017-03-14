@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="keywords" content="Bitcoin, Cash, Cryptocurrencies, Ethereum, Privacy, P2P, Physical, Decentralized" />
+        <title>Checkoin</title>
+
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/css/pygments.css" rel="stylesheet">
+        <link href="static/css/style.css" rel="stylesheet">
+        <link rel="icon" href="media/logo.svg" sizes="any" type="image/svg+xml">
+
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body data-spy="scroll" data-target="#menu">
+
+        <noscript><!-- No JS? Got HD! -->
+            <video class="tuco_bites_coin hd" loop autoplay> 
+               <source src="media/tuco_bites_coin.mp4" type="video/mp4">
+               <source src="media/tuco_bites_coin.webm" type="video/webm">
+               <source src="media/tuco_bites_coin.ogg" type="video/ogg">
+            </video>
+        </noscript>
+
+        <video class="tuco_bites_coin hd" loop preload="none"> 
+           <source src="media/tuco_bites_coin.mp4" type="video/mp4">
+           <source src="media/tuco_bites_coin.webm" type="video/webm">
+           <source src="media/tuco_bites_coin.ogg" type="video/ogg">
+        </video>
+
+        <video class="tuco_bites_coin small" loop preload="none"> 
+           <source src="media/tuco_bites_coin_small.mp4" type="video/mp4">
+           <source src="media/tuco_bites_coin_small.webm" type="video/webm">
+           <source src="media/tuco_bites_coin_small.ogg" type="video/ogg">
+        </video>
+
+
+<header><h1 id="top">Checkoin</h1>
+
+<p>Open standard to secure the circulation of physical crypto-cash/coins.</p>
+</header>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3 hidden-xs hidden-sm">
+            <div id="float_column">
+                <div id="menu" role="navigation">
+                    <ul class="nav list-group table-of-contents" role="tablist">
+                        <li class="list-group-item"><a href="#top">Checkoin</a></li>
+                    <li class="list-group-item"><a href="#how-it-works">How it works</a></li>
+                    <li class="list-group-item"><a href="#definitions">Definitions</a></li>
+                    <li class="list-group-item"><a href="#getting-in">Getting in</a></li>
+                    <li class="list-group-item"><a href="#roadmap">Roadmap</a></li>
+                    <li class="list-group-item"><a href="#authors">Authors</a></li>
+                    <li class="list-group-item"><a href="#thanks">Thanks</a></li>
+                    </ul>
+                </div>
+                <div id="doc_info">
+                    <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="media/cc-by-nd_88x31.png" /></a>
+                    <br />
+                    <label class="label label-primary">Version</label><span class="label label-default">pre-rfc_rev13-124d520</span>
+                    <a id="twitter" href="https://twitter.com/checkoin">@checkoin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+        <p>Checkoin allows the hand to hand circulation of physical mediums that holds "something" (for example a secret information). Guaranteeing to the person receiving it that the medium is indeed the uniquely identified medium that it pretends to be, that it has not been counterfeited nor copied, and that what it holds hasn't been tampered with nor unveiled by anyone before. Checkoin was initially designed for the offline circulation of cryptocurrencies, but is not limited to it.</p>
+
+<p><a href="https://en.bitcoin.it/wiki/Physical_bitcoin">Physical cryptocoins (or cryptocash)</a> are mediums of exchange holding sealed <a href="https://en.bitcoin.it/wiki/Cold_storage">cold storage</a> information for cashing cryptocurrencies (or more generally any redeemable asset). As Bitcoin addressed the digital currency's issue of double-spending, Checkoin aims to address the issues of the hand to hand circulation of physical cryptocoins (geolocation, counterfeiting, altering, copying, etc.), while protecting the freedom and anonymity of the users.</p>
+
+<p>It allows to check the integrity of physical cryptocoins without having to break their sealing, with a high level of trust and ease, like checking a banknote under a UV blacklight. Thus, they can circulate safely, by hand from peer-to-peer, until they eventually get cashed by having their irreversible sealing opened, then trashed.</p>
+
+<p>In other words, you don't need to “crack the nut” to know if it is “rotten”, you just perform a reliable “health evaluation” that helps you to decide if you accept it as a payment, if any doubt you simply reject it, <a href="#model__guarantee_duration">return it</a>, or crack it to be sure, and eat it!</p>
+
+<p>Why physical mediums of exchange in the digital age? Because it's fun, easy, socially interacting and pedagogical for bringing the use of cryptocurrencies to the masses. Furthermore, as the digital age is also the time of mass surveillance (gaining ground on our privacy under the <a href="https://www.corbettreport.com/the-war-on-cash-a-country-by-country-guide/">war on cash</a>), and as the global fiat <a href="https://en.wikipedia.org/wiki/Currency_war">currency war</a> has already started, having alternative means of exchange that rest most of their time off-the-grid in our pockets (and which worth more than the paper it's written on) is interesting way to stay away from these threats. Finally, Satoshi's motivation for Bitcoin wasn't the beauty or convenience of technology, but freedom, pursuing the dynamic to the physical world is more than ever bitcoinish.</p>
+
+<p>In its current form Checkoin is a technical proposal for the standardization of such specifications, a pre-<a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>-like work in progress. You are welcome to <a href="#getting-in">get in</a> in order to manifest this open economical ecosystem of trust, freedom, fluidity and innovation into reality!</p>
+
+<h2 id="how-it-works"><a name="how-it-works"></a>How it works</h2>
+
+<p>Additionally to the <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em> common to most physical cryptocoins, <em><a href=#checkoin>Checkoin</a></em> <em><a href=#coin>Coins</a></em> present a <em><a href=#visible-scan-data>Visible Scan Data</a></em> on their outer surface. When a user gets a <em><a href=#coin>Coin</a></em> handed to him/her, the user <em><a href=#scan>Scans</a></em> the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of the <em><a href=#coin>Coin</a></em> with a <em><a href=#blacklight>Blacklight</a></em> application (or device) to check the <em><a href=#coin>Coin</a></em>.</p>
+
+<p><a href="media/scan.gif"><img src="media/scan.gif" class="img-responsive" alt="Blacklight Scan Animation" /></a></p>
+
+<p>Then, the <em><a href=#blacklight>Blacklight</a></em> retrieves information (via its server) from the <em><a href=#network>Network</a></em> about the <em><a href=#coin>Coin</a></em>, and <a href="#coin__encrypted_signature">cryptographically</a> authenticates it (using the <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrase</em> which is <strong>never</strong> sent anywhere outside of the <em><a href=#blacklight>Blacklight</a></em>). If the authentication successes the <em><a href=#blacklight>Blacklight</a></em>'s server performs data analysis about the <em><a href=#coin>Coin</a></em> to be displayed on the <em><a href=#blacklight>Blacklight</a></em>. Especially about the consistency of the geolocation and timing of the previous <em><a href=#scan>Scans</a></em>' lineage. Indeed, if the <em><a href=#coin>Coin</a></em> has been subjected to counterfeiting with its <em><a href=#visible-scan-data>Visible Scan Data</a></em> being copied, it means that there are multiple counterfeited “coins” that will be scanned at different locations and time, which will quickly become inconsistent with the frequency of exchanges and geographical distance between the <em><a href=#blacklight>Blacklights</a></em>.</p>
+
+<p>This verification imposes discouraging constraints to the wannabe counterfeiters. They would be able to counterfeit only a very very few copies of a <em><a href=#coin>Coin</a></em> (not to say only one), while attempting to offload it quickly in a narrow geographical perimeter, in the hope of slipping through the net of the <em><a href=#scan>Scans</a></em>' analysis by the <em><a href=#blacklight>Blacklights</a></em>. As <em><a href=#checkoin>Checkoin</a></em> allows anyone to become a <em><a href=#minter>Minter</a></em>, the variety of <em><a href=#coin>Coins</a></em>' shapes, colors, materials, holograms, etc. makes this counterfeiting very tedious (especially if the counterfeiter only captured the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of the <em><a href=#coin>Coin</a></em> but not the <em><a href=#coin>Coin</a></em> itself, which pushes him/her to rush its handcrafted imitation, before the original moves to another location). That's also why <em><a href=#blacklight>Blacklights</a></em> display <a href="#model__illustrations">pictures</a> (and/or short videos) of the <em><a href=#coin>Coin</a></em> provided by its <em><a href=#minter>Minter</a></em>, so the user knows precisely how it is supposed to look like. The sophistication of the <em><a href=#model>Models</a></em> of <em><a href=#coin>Coins</a></em> is recommended to be proportional to the value of the asset they hold, in order to make the difficulty to counterfeit proportionally dissuasive (from the simple cardboard up to the <a href="#coin__public_key">key signing microchip</a>).</p>
+
+<p>Here follows a non-exhaustive list of informations and services that the <em><a href=#blacklight>Blacklights</a></em> should propose:</p>
+
+<ul>
+<li>analysis about the coherence of the geolocation and timing of previous <em><a href=#scan>Scans</a></em>,</li>
+<li>content of the <a href="#coin__asset_pointer">address</a> associated with the <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em> on the cryptocurrency's blockchain,</li>
+<li><a href="#model__illustrations">picture</a> and other informations about of the <em><a href=#coin>Coin</a></em> provided by the <em><a href=#minter>Minter</a></em>,</li>
+<li>instant market value of the asset held by the <em><a href=#coin>Coin</a></em> and of the <em><a href=#coin>Coin</a></em> itself (as well as trends, how to resell it, etc.),</li>
+<li>how to perform eventual <a href="#model__check_info">extra security checks</a> (e.g. for <em><a href=#coin>Coins</a></em> with holograms, watermarks, UV ink, <a href="#coin__public_key">key signing microchips</a>, etc.),</li>
+<li>USB cryptographic check for <em><a href=#coin>Coins</a></em> holding a <a href="#coin__public_key">key signing microchip</a>,</li>
+<li>is the <em><a href=#coin>Coin</a></em> <a href="#model__guarantee_duration">guaranteed</a>,</li>
+<li>analysis of the informations of reliability provided by the <em><a href=#auditor>Auditors</a></em> about the <em><a href=#coin>Coin</a></em>, the <em><a href=#model>Model</a></em>, the <em><a href=#minter>Minter</a></em>, etc.,</li>
+<li>general good practice advises for the end user (e.g. which questions should I ask to the person who hands me the <em><a href=#coin>Coin</a></em> based on the analysis),</li>
+<li>should I accept, <a href="#model__guarantee_duration">return</a>, cash or reject the <em><a href=#coin>Coin</a></em> based on the analysis,</li>
+<li>how to contact an <em><a href=#auditor>Auditor</a></em> if I noticed something suspicious,</li>
+<li>a button “alert me when this <em><a href=#coin>Coin</a></em> is scanned again”,</li>
+<li>etc.</li>
+</ul>
+
+<p>Then, unless the user has requested an “silent scan”, a new <em><a href=#scan>Scan</a></em> record of the current location and time gets stored on the <em><a href=#network>Network</a></em> (optionally encrypted), which brings the process to a close, until the next <em><a href=#scan>Scan</a></em>. Thus, scanning a <em><a href=#coin>Coin</a></em> enforces the safety of its circulation.</p>
+
+<h3 id="notes"><a name="notes"></a>Notes</h3>
+
+<ul>
+<li>Even if the “user” is alluded to in this document for practical reasons, there is no such thing as a “user” in the definitions nor data model of these specifications, for obvious privacy reasons. The only identified endpoint of <em><a href=#checkoin>Checkoin</a></em> for the “end user” is the well established <em><a href=#blacklight>Blacklight</a></em> server manager's <em><a href=#account>Account</a></em>. Any <em><a href=#checkoin>Checkoin</a></em> component is forbidden to require (coercively or not) any “end user” to identify with an <em><a href=#account>Account</a></em> under any circumstance.</li>
+<li>The <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em> is not limited to cryptocurrencies, there is no reason for such limitation, and it facilitate the diversification of assets in peoples' pockets/portfolios which enforces economical security, other <em><a href=#asset-type>Asset Types</a></em> could be:
+<ul>
+<li>Air Miles,</li>
+<li>a stock of vintage wine or <a href="https://www.rt.com/business/331290-parmesan-italy-bank-bonds/">parmesan</a> listed on a stock exchange,</li>
+<li>a coupon for the local grocery store (then the <em><a href=#blacklight>Blacklight</a></em> should display the value of the asset according to the location, it is likely to value 0 half way around the world)</li>
+<li>a <a href="https://www.goldmoney.com/">Goldmoney</a> coupon (or the gold nugget itself, indeed if the asset is small enough, transportable and securely sealed it can replace the content of the <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em>),</li>
+<li>etc.</li>
+</ul></li>
+<li>If the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of a <em><a href=#coin>Coin</a></em> gets leaked on the Internet, or if a previous user kept note of it, there is the possibility of an attack on this <em><a href=#coin>Coin</a></em>'s integrity by making multiple forged scans with inconsistent time and location. This is unlikely to happen except for gratuitous malice or retaliation (e.g. an angry customer), but if the <em><a href=#coin>Coin</a></em> integrity gets damaged, it still has the value of the asset it holds, so, the damage is limited. Such an attack would be like smashing a Philharmonic gold coin with a hammer, it loose some of its value, but it's still gold. Furthermore, such attacks could be intercepted by the <em><a href=#blacklight>Blacklights</a></em>' servers with some pattern analysis.</li>
+<li>The circulation of <em><a href=#coin>Coins</a></em> passed from hand to hand can speed up the transaction process and relieve the traffic congestion on saturated cryptocurrencies like Bitcoin.</li>
+<li>Checkoin is more resilient against Internet failure/censorship than cryptocurrencies. Indeed, it doesn't require worldwide write access to allow exchanges to take place, the only writing that happens during an exchange is the <em><a href=#scan>Scan</a></em>, which is by design optional (“silent scan”) and can be replicated on the <em><a href=#network>Network</a></em> later on when Internet is restored (via the second <em><a href=#pool>Pool</a></em> layer). In case of Internet failure/censorship any database backup of the <em><a href=#checkoin>Checkoin</a></em> <em><a href=#network>Network</a></em> (including <a href="#model__illustrations">media ressources</a>) can operate in a local standalone mode (or within a regional <a href="https://en.wikipedia.org/wiki/Local_area_network">LAN</a>), with a reasonable short/middle term reliability before slowly deteriorating. Indeed, it will eventually suffer a lack of remote <em><a href=#scan>Scan</a></em> data at some point (especially if operating outside of a LAN) and ignore <em><a href=#coin>Coins</a></em> newly minted after the connexion loss. But only few minutes of sporadic Internet connexion some days in the week for synchronizing could keep it alive in the long term.</li>
+<li>There will always be counterfeiters, but <em><a href=#checkoin>Checkoin</a></em> makes it quite dissuasive and unworthy. Also, one of the reasons why counterfeiting has been so tempting in history of mankind is the monopoly on money supply, and artificial scarcity typical to economies of perpetual crisis. But with <em><a href=#checkoin>Checkoin</a></em> there is no such monopoly, it's an economy of abundance, anyone able to manufacture fake “coins” can more easily become a legit <em><a href=#minter>Minter</a></em>, which might also reduce this temptation.</li>
+</ul>
+
+<h3 id="examples-of-emcoinsem"><a name="examples-of-emcoinsem"></a>Examples of <em><a href=#coin>Coins</a></em></h3>
+
+<h4 id="printed-circuit-with-a-a-hrefcoin__public_keykey-signing-microchipa"><a name="printed-circuit-with-a-a-hrefcoin__public_keykey-signing-microchipa"></a>Printed circuit with a <a href="#coin__public_key">key signing microchip</a></h4>
+
+<p><a href="media/coin_circuit.png"><img src="media/coin_circuit.png" class="img-responsive" alt="Printed Circuit Coin" /></a></p>
+
+<h4 id="vintage-wine-stock"><a name="vintage-wine-stock"></a>Vintage wine stock</h4>
+
+<p><a href="media/coin_vin.jpg"><img src="media/coin_vin.jpg" class="img-responsive" alt="Vintage Wine Coin" /></a></p>
+
+<h4 id="handcrafted"><a name="handcrafted"></a>Handcrafted</h4>
+
+<p><a href="media/coin_kraft.jpg"><img src="media/coin_kraft.jpg" class="img-responsive" alt="Handcrafted Coin" /></a></p>
+
+<h4 id="physical-gold-micro-nuggets"><a name="physical-gold-micro-nuggets"></a>Physical gold micro-nuggets</h4>
+
+<p><a href="media/coin_gold.png"><img src="media/coin_gold.png" class="img-responsive" alt="Gold Coin" /></a></p>
+
+<h2 id="definitions"><a name="definitions"></a>Definitions</h2>
+
+<h3 id="network"><a name="network"></a>Network</h3>
+
+<p>The decentralized computer logistics that runs the software and data that are common to all <em><a href=#checkoin>Checkoin</a></em> actors and accessible from the Internet. The Network is composed of two layers based on existing technologies, the lower layer called the <em><a href=#chain>Chain</a></em> and the upper layer the <em><a href=#pool>Pool</a></em>.</p>
+
+<h4 id="chain"><a name="chain"></a>Chain</h4>
+
+<p>A set of applications and data running upon an existing blockchain technology able to execute smart contracts (likely to be Ethereum). It hosts the rigid, neutral, unstoppable, secure and minimal components of the <em><a href=#checkoin>Checkoin</a></em> clockwork. Where interaction between untrusted <em><a href=#account>Accounts</a></em> must remain safe, and where eternal and indisputable data that worth paying transaction fees for gets stored.</p>
+
+<h4 id="account"><a name="account"></a>Account</h4>
+
+<p>A native account on the blockchain technology that runs the <em><a href=#chain>Chain</a></em>.</p>
+
+<p>Additionally, an Account can store extra information about itself on the <em><a href=#chain>Chain</a></em>.</p>
+
+<p>Example of an Account information record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9876[…]54321&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Etsy Minter Artist&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+ <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mintart@gmail.com&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.etsy.com/shop/mintart/&quot;</span><span class="p">,</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Mandatory fields:</p>
+
+<ul>
+<li><a name="account__checkoin_version"></a><code>checkoin_version</code>: the version of the <em><a href=#checkoin>Checkoin</a></em> specifications followed to create the Account,</li>
+<li><a name="account__account"></a><code>account</code>: the Account address,</li>
+<li><a name="account__name"></a><code>name</code>: the name of the Account.</li>
+</ul>
+
+<p>Any other field can be freely added, please <a href="#crowdsourcing">contribute</a> to help improving and standardizing them.</p>
+
+<h4 id="pool"><a name="pool"></a>Pool</h4>
+
+<p>A network layer for storing, retrieving and broadcasting public signed data that do not need or cannot be stored on the <em><a href=#chain>Chain</a></em>. Typically because this data is frequent, large, do not require blockchain validation, or requires real time propagation.</p>
+
+<p>In its first version this layer implementation follows the <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS principle</a>, it is currently the most debatable technical part, you are welcome to <a href="#crowdsourcing">contribute</a> to propose improvements.</p>
+
+<p>It simply consists in a collection of <em>Seed Nodes</em> registered on the <em><a href=#chain>Chain</a></em>, that make their data available via asynchronous replication able technology (undetermined yet, might be something like CouchDB, Redis, etc.).</p>
+
+<p>Self-explanatory example of a <em>Seed Node</em> record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;55555555-555555555-5555-555555555555&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1234[…]56789&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;couchdb&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;http://seed.koinscan.com:5984/_replicate&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;scans&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>If the asynchronous replication menaces to saturate, a second version of <em><a href=#checkoin>Checkoin</a></em> might relegate its role for the initial synchronization of <em>Slave Nodes</em>, then new incoming data being globally transported via another P2P broadcast mesh network. Or this whole layer could be moved to a better suited or tailor made technology.</p>
+
+<p>This data is likely to be curated before being exploited, by selecting the <em>Seed Nodes</em> and the signed data they serve based on their <a href="#auditor">reputation</a>.</p>
+
+<p><em>Seed Nodes</em> should primarily be set up and managed by <em><a href=#blacklight>Blacklight</a></em> fabricators for their own use, but not necessarily, it could also be collaborative or third party services.</p>
+
+<h3 id="localized-string"><a name="localized-string"></a>Localized String</h3>
+
+<p>A dictionary object presenting multiple translations of the same string.</p>
+
+<p>Self-explanatory example of a Localized String:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+ <span class="nt">&quot;en_GB&quot;</span><span class="p">:</span> <span class="s2">&quot;Open standard to secure the circulation of physical cryptocoins.&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard ouvert pour sécuriser la cirulation de crypto-pièces physiques.&quot;</span><span class="p">,</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="auditor"><a name="auditor"></a>Auditor</h3>
+
+<p>Outside of the merciless <em><a href=#chain>Chain</a></em> technology, we face again the classic trust issues of the physical world. While <em><a href=#checkoin>Checkoin</a></em> core is designed not to suffer from it (when trust gets broken the way out is to reject, <a href="#model__guarantee_duration">return</a> or cash the <em><a href=#coin>Coin</a></em>), having a <a href="https://www.youtube.com/watch?v=Yn7e0J9m6rE">reputation system</a> on top of it can significantly enhance the level of trust, which will greatly extend the area of proper functioning of the service and smoothen its use.</p>
+
+<p>To do so, any <em><a href=#account>Account</a></em> can become an Auditor by providing extra <em><a href=#audit>Audit</a></em> information about the ecosystem. Whether they are ad-hoc or professional Auditors.</p>
+
+<h4 id="audit"><a name="audit"></a>Audit</h4>
+
+<p>A record on the <em><a href=#network>Network</a></em> providing information about the reliability an of an entry:</p>
+
+<ul>
+<li><em><a href=#pool>Pool</a></em>'s <em>Seed Nodes</em>,</li>
+<li><em><a href=#asset-type>Asset Types</a></em>,</li>
+<li><em><a href=#blacklight>Blacklights</a></em>,</li>
+<li><em><a href=#blacklight>Blacklights</a></em>' <em>Versions</em>,</li>
+<li><em><a href=#model>Models</a></em>,</li>
+<li><em><a href=#coin>Coins</a></em>,</li>
+<li><em><a href=#scan>Scans</a></em>,</li>
+<li><em><a href=#account>Accounts</a></em>:
+<ul>
+<li><em><a href=#minter>Minters</a></em>,</li>
+<li><em><a href=#blacklight>Blacklight</a></em> fabricators,</li>
+<li><em><a href=#blacklight>Blacklight</a></em> <em><a href="#scan__blacklight_server">Server Managers</a></em>,</li>
+<li><em><a href="#coin__sealer">Sealers</a></em>,</li>
+<li><em><a href="#model__asset_producer">Asset Producers</a></em>,</li>
+<li><em><a href="#model__asset_supplier">Asset Suppliers</a></em>,</li>
+<li><em><a href="#model__asset_manager">Asset Managers</a></em>,</li>
+<li><em><a href="#model__asset_vault">Asset Vaults</a></em>,</li>
+<li>other <em><a href=#auditor>Auditors</a></em>,</li>
+<li>etc.</li>
+</ul></li>
+<li>other <em><a href=#audit>Audits</a></em>.</li>
+</ul>
+
+<p>Example of an Audit record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;99999999-888888888-7777-666666666666&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;auditor&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9876[…]54321&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;entry_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;11111111-222222222-3333-444444444444&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;entry_reliability&quot;</span><span class="p">:</span> <span class="mf">0.98</span><span class="p">,</span>
+ <span class="nt">&quot;audit_depth&quot;</span><span class="p">:</span> <span class="mf">0.42</span><span class="p">,</span>
+ <span class="nt">&quot;audit_method&quot;</span><span class="p">:</span> <span class="s2">&quot;videoconferencing&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;audit_domain&quot;</span><span class="p">:</span> <span class="s2">&quot;privacy&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1111[…]22222&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Mandatory fields:</p>
+
+<ul>
+<li><a name="audit__checkoin_version"></a><code>checkoin_version</code>: the version of the <em><a href=#checkoin>Checkoin</a></em> specifications followed to create the Audit,</li>
+<li><a name="audit__uuid"></a><code>uuid</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the Audit,</li>
+<li><a name="audit__auditor"></a><code>auditor</code>: the <em><a href=#auditor>Auditor</a></em>'s <em><a href=#account>Account</a></em> address,</li>
+<li><a name="audit__entry_uuid"></a><code>entry_uuid</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the audited entry,</li>
+<li><a name="audit__entry_reliability"></a><code>entry_reliability</code>: a decimal number representing the reliability of the entry, from 0 (lower) to 1 (higher),</li>
+<li><a name="audit__audit_depth"></a><code>audit_depth</code>: a decimal number representing the depth of the entry, from 0 (shallow) to 1 (deepest),</li>
+<li><a name="audit__audit_method"></a><code>audit_method</code>: a slug describing the audit method (e.g. "user_feedback", "videoconferencing", "postal_way", "on_premises", etc.),</li>
+<li><a name="audit__audit_domain"></a><code>audit_domain</code>: a slug describing the domain in which domain the audit has been carried out (e.g. "privacy", "checkoin_specs_compliance", "data_protection", "ecology", "neutrality", "independence", "customer_service", etc.),</li>
+<li><a name="audit__date"></a><code>date</code>: ISO 8601 timestamp of the date of the Audit,</li>
+<li><a name="audit__signature"></a><code>signature</code>: <em><a href=#auditor>Auditor</a></em>'s signature of all the other fields (mandatory and free) alphabetically ordered and serialized in a non-indented JSON string, so it can be trusted outside of the <em><a href=#chain>Chain</a></em> (e.g. if replicated on the <em><a href=#pool>Pool</a></em>).</li>
+</ul>
+
+<p>Any other field can be freely added (<strong>except for Audits on Scan records</strong> for privacy reasons), please <a href="#crowdsourcing">contribute</a> to help improving and standardizing them.</p>
+
+<p><em><a href=#checkoin>Checkoin</a></em> do not provide nor recommend any method for analyzing this data, it's up to the <em><a href=#blacklight>Blacklight</a></em> fabricators and <em><a href=#auditor>Auditors</a></em> to innovate on this domain. However, <em><a href=#checkoin>Checkoin</a></em> might provide some toolkits and libraries <a href="#roadmap">in the future</a> that may include some standard Audit analysis algorithms.</p>
+
+<p>An Audit can be registered on the <em><a href=#chain>Chain</a></em> or on the <em><a href=#pool>Pool</a></em>, however an Audit registered on the <em><a href=#chain>Chain</a></em> might have more weight, as well as an Audit that is more recent.</p>
+
+<h3 id="asset-type"><a name="asset-type"></a>Asset Type</h3>
+
+<p>A record on the <em><a href=#chain>Chain</a></em> describing a type of redeemable asset.</p>
+
+<p>Self-explanatory example of an Asset Type record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;registered_by&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0707[…]07070&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bitcoin&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;BTC&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;Ƀ&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Optional</span>
+ <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;World&#39;s most famous cryptocurrency.&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Or</span> <span class="err">a</span>  <span class="err">Localized</span> <span class="err">String.</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="minter"><a name="minter"></a>Minter</h3>
+
+<p>An entity that manufactures <em><a href=#coin>Coins</a></em>, identified with an <em><a href=#account>Account</a></em>.</p>
+
+<h3 id="model"><a name="model"></a>Model</h3>
+
+<p>The base model for a series of <em><a href=#coin>Coins</a></em>, registered on the <em><a href=#chain>Chain</a></em>.</p>
+
+<p>Example of a Model record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;minter&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3333[…]44444&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05Ƀ Limited Red Watermark&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;illustrations&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+     <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;heads&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://secoin.io/pics/005BTC_lrw_heads.jpg&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+     <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tails&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://secoin.io/pics/005BTC_lrw_tails.jpg&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+     <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;video/mp4&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;pool_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;77777777-777777777-7777-777777777777&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+ <span class="p">],</span>
+
+<span class="err">//</span> <span class="err">Mandatory,</span> <span class="err">or</span> <span class="err">must</span> <span class="err">have</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">for</span> <span class="err">each</span> <span class="err">Coin</span> <span class="err">of</span> <span class="err">this</span> <span class="err">Model.</span>
+ <span class="nt">&quot;asset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+ <span class="nt">&quot;cashing_method&quot;</span><span class="p">:</span> <span class="s2">&quot;armory&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Optional</span>
+ <span class="nt">&quot;check_info&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;en_GB&quot;</span><span class="p">:</span> <span class="s2">&quot;Look the watermark through a light.&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fr_FR&quot;</span><span class="p">:</span> <span class="s2">&quot;Regarder le filigrane à travers la lumière.&quot;</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Coin holding 0.05Ƀ, limited edition with a red watermark.&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;limited&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
+ <span class="nt">&quot;max_scans&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+ <span class="nt">&quot;guarantee_duration&quot;</span><span class="p">:</span> <span class="mi">365</span><span class="p">,</span>
+ <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://secoin.io/models/005BTC_limited_red_watermark/&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_producer&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2211[…]22112&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_supplier&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3344[…]33443&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_manager&quot;</span><span class="p">:</span> <span class="s2">&quot;0x5566[…]55665&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_vault&quot;</span><span class="p">:</span> <span class="s2">&quot;0x7788[…]77887&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;returnable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Mandatory fields:</p>
+
+<ul>
+<li><a name="model__checkoin_version"></a><code>checkoin_version</code>: the version of the <em><a href=#checkoin>Checkoin</a></em> specifications followed to create the Model,</li>
+<li><a name="model__uuid"></a><code>uuid</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the Model,</li>
+<li><a name="model__minter"></a><code>minter</code>: the <em><a href=#minter>Minter</a></em>'s <em><a href=#account>Account</a></em> address,</li>
+<li><a name="model__name"></a><code>name</code>: the name of the Model,</li>
+<li><a name="model__asset_type"></a><code>asset_type</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the <em><a href=#asset-type>Asset Type</a></em> held by each <em><a href=#coin>Coin</a></em> of this Model,</li>
+<li><a name="model__quantity"></a><code>quantity</code>: decimal number representing the quantity of <em><a href=#asset-type>Asset Type</a></em> held by each <em><a href=#coin>Coin</a></em> of this Model, this field can be overridden by the same <a href="#coin__quantity"><code>quantity</code></a> field of the <em><a href=#coin>Coin</a></em> if present,</li>
+<li><a name="model__cashing_method"></a><code>cashing_method</code>: a slug representing the method to be used to cash <em><a href=#coin>Coins</a></em> of this Model (e.g. "armory", "pub_priv_keys", "goldmoney_coupon", etc.),</li>
+<li><a name="model__date"></a><code>date</code>: ISO 8601 timestamp of the date of the Model,</li>
+<li><a name="model__illustrations"></a><code>illustrations</code>: a list of media resource(s) that illustrate this Model of <em><a href=#coin>Coin</a></em>, media resource fields are:
+<ul>
+<li><a name="model__mime"></a><code>mime</code>: the mime type of the media (mandatory),</li>
+<li><a name="model__url"></a><code>url</code> or <code>pool_uuid</code>: to retrieve the media (mandatory),</li>
+<li><a name="model__type"></a><code>type</code>: a slug indicating what the media stands for (optional).</li>
+</ul></li>
+</ul>
+
+<p>Optional fields:</p>
+
+<ul>
+<li><a name="model__check_info"></a><code>check_info</code>: a string or a <em><a href=#localized-string>Localized String</a></em> providing information on how to check <em><a href=#coin>Coins</a></em> of this Model if it provides extra security (e.g. for holograms, watermarks, UV ink, <a href="#coin__public_key">key signing microchips</a>, etc.),</li>
+<li><a name="model__description"></a><code>description</code>: a string or a <em><a href=#localized-string>Localized String</a></em> describing this Model of <em><a href=#coin>Coin</a></em>,</li>
+<li><a name="model__limited"></a><code>limited</code>: the number of minted <em><a href=#coin>Coins</a></em> of this Model, if limited,</li>
+<li><a name="model__max_scans"></a><code>max_scans</code>: an integer indicating the maximum number of <em><a href=#scan>Scans</a></em> recommended by the <em><a href=#minter>Minter</a></em> for <em><a href=#coin>Coins</a></em> of this Model, if any (e.g. for Models of <em><a href=#coin>Coins</a></em> made of degradable materials that might become unusable after too many exchanges),</li>
+<li><a name="model__guarantee_duration"></a><code>guarantee_duration</code>: integer defining duration of the guarantee in days, if any (or -1 for unlimited guarantee), starting from the <a href="#coin__date"><code>date</code></a> of each <em><a href=#coin>Coin</a></em> of this Model, in such case any of these <em><a href=#coin>Coins</a></em> having their integrity compromised can be returned (or “cashed” online) for a new <em><a href=#coin>Coin</a></em> instead of their redeemable asset,</li>
+<li><a name="model__url"></a><code>url</code>: the URL of the website or page dedicated to this Model of <em><a href=#coin>Coin</a></em>,</li>
+<li><a name="model__asset_producer"></a><code>asset_producer</code>: the <em><a href=#account>Account</a></em> address of the entity that is producing the asset,</li>
+<li><a name="model__asset_supplier"></a><code>asset_supplier</code>: the <em><a href=#account>Account</a></em> address of the entity that is supplying the asset,</li>
+<li><a name="model__asset_manager"></a><code>asset_manager</code>:  the <em><a href=#account>Account</a></em> address of the entity that is managing the asset,</li>
+<li><a name="model__asset_vault"></a><code>asset_vault</code>: the <em><a href=#account>Account</a></em> address of the entity that is safekeeping the asset,</li>
+<li><a name="model__returnable"></a><code>returnable</code>: boolean indicating if <em><a href=#coin>Coins</a></em> of this Model can be returned/refunded to the <em><a href=#minter>Minter</a></em> after being cashed (for <em><a href=#coin>Coins</a></em> which are not physically destroyed after having their sealing opened, e.g. for read-once self-erasing microchip),</li>
+</ul>
+
+<p>Any other field can be freely added, please <a href="#crowdsourcing">contribute</a> to help improving and standardizing them.</p>
+
+<p>Optionally, Model records can be made private by having all their fields (except <code>checkoin_version</code> and <code>uuid</code>) serialized into a JSON string encrypted with the first half of the <em><a href=#coin>Coins</a></em>' <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrases</em> (this first half prefix must be the same for all the <em>Passphrases</em> of all the <em><a href=#coin>Coins</a></em> of this Model in this case, if the length of a <em>Passphrase</em> is odd the first half is the longest), then nested into the <code>encrypted</code> field. However, this encryption might slow down the <em><a href=#scan>Scan</a></em> process as the <em><a href=#blacklight>Blacklight</a></em> will have to decrypt it for the <em><a href=#blacklight>Blacklight</a></em>'s server.</p>
+
+<p>Example of the same record made private:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;ggZMZngTm0XZMO+RMwm2UY7OCP+yjohaMwt1 […] zqsOIryyuq0czymOFPtjMh+DB/c5A=&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="coin"><a name="coin"></a>Coin</h3>
+
+<p>A medium presenting a single <em><a href=#visible-scan-data>Visible Scan Data</a></em>, a single description of the asset it holds (e.g. “0.01Ƀ”), the mention “Exchange me, keep me, or cash me!”, and holding a single <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em>, Typically a flat cardboard or plastic object (but it can be anything, it's up to the innovation of the <em><a href=#minter>Minters</a></em>).</p>
+
+<p>Each minted Coin comes with a record registered on the <em><a href=#chain>Chain</a></em>.</p>
+
+<p>Example of a Coin record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_pointer&quot;</span><span class="p">:</span> <span class="s2">&quot;1P89rsq6HxAPSi3CAaFEEagdqWbe2T6imc&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;preloaded&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="nt">&quot;encrypted_signature&quot;</span><span class="p">:</span> <span class="s2">&quot;GfAlfjuWnPeAhBy+cn3/bAddbzJU8e2AR0U126VFD3g=&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Mandatory</span> <span class="err">if</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">on</span> <span class="err">the</span> <span class="err">Coin&#39;s</span> <span class="err">Model</span> <span class="err">are</span> <span class="err">absent.</span>
+ <span class="nt">&quot;asset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;cashing_method&quot;</span><span class="p">:</span> <span class="s2">&quot;armory&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Mandatory</span> <span class="err">if</span> <span class="err">one</span> <span class="err">or</span> <span class="err">more</span> <span class="err">above</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">are</span> <span class="err">set.</span>
+ <span class="nt">&quot;sealer&quot;</span><span class="p">:</span> <span class="s2">&quot;0x7788[…]19735&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Optional</span> <span class="err">if</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">on</span> <span class="err">the</span> <span class="err">Coin&#39;s</span> <span class="err">Model</span> <span class="err">are</span> <span class="err">present,</span> <span class="err">mandatory</span> <span class="err">if</span> <span class="err">absent.</span>
+ <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Optional</span> <span class="err">but</span> <span class="err">depends</span> <span class="err">on</span> <span class="err">`sealer`</span> <span class="err">to</span> <span class="err">be</span> <span class="err">set.</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;0.01Ƀ.&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Coin holding 0.01Ƀ.&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;guarantee_duration&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+ <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://youcoin.io/models/001BTC/&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_producer&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2211[…]22112&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_supplier&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3344[…]33443&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_manager&quot;</span><span class="p">:</span> <span class="s2">&quot;0x5566[…]55665&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;asset_vault&quot;</span><span class="p">:</span> <span class="s2">&quot;0x7788[…]77887&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;returnable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Optional</span>
+ <span class="nt">&quot;expiry_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-03-14T04:53:32&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2222[…]11011&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;check_info&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;en_GB&quot;</span><span class="p">:</span> <span class="s2">&quot;Do something.&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fr_FR&quot;</span><span class="p">:</span> <span class="s2">&quot;Faire quelque chose.&quot;</span>
+ <span class="p">},</span>
+
+<span class="err">//</span> <span class="err">Free,</span> <span class="err">except</span> <span class="err">for</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">on</span> <span class="err">the</span> <span class="err">Coin&#39;s</span> <span class="err">Model.</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Mandatory fields:</p>
+
+<ul>
+<li><a name="coin__checkoin_version"></a><code>checkoin_version</code>: the version of the <em><a href=#checkoin>Checkoin</a></em> specifications followed to mint the Coin,</li>
+<li><a name="coin__uuid"></a><code>uuid</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the Coin,</li>
+<li><a name="coin__model"></a><code>model</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the <em><a href=#model>Model</a></em> of the Coin,</li>
+<li><a name="coin__date"></a><code>date</code>: ISO 8601 timestamp of the minting/sealing of the Coin,</li>
+<li><a name="coin__asset_pointer"></a><code>asset_pointer</code>: a string indicating where the asset is located (typically a cryptocurrency address),</li>
+<li><a name="coin__preloaded"></a><code>preloaded</code>: boolean indicating if the Coin was provided by the <em><a href=#minter>Minter</a></em> with the asset present at the <code>asset_pointer</code> (e.g. “US government” “forbids” to sell preloaded cryptocoins, it has to be loaded later on by the user),</li>
+<li><a name="coin__encrypted_signature"></a><code>encrypted_signature</code>: <em><a href=#minter>Minter</a></em>'s signature of all the other fields (mandatory, optional and free) alphabetically ordered and serialized in a non-indented JSON string, then encrypted with the <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrase</em> of the Coin. So the holder of the Coin can prove he/she is physically holding it by making the <em><a href=#blacklight>Blacklight</a></em> decoding the signature and make it match by the <em><a href=#blacklight>Blacklight</a></em>'s server,</li>
+<li>if homologue fields on the Coin's <em><a href=#model>Model</a></em> are absent:
+<ul>
+<li><a name="coin__asset_type"></a><code>asset_type</code>: see <a href="#model__asset_type">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__cashing_method"></a><code>cashing_method</code>: see <a href="#model__cashing_method">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+</ul></li>
+<li>if one or more above homologue fields are set:
+<ul>
+<li><a name="coin__sealer"></a><code>sealer</code>: the <em><a href=#account>Account</a></em> of the entity that places the <em>Asset</em> into the <em><a href=#coin>Coin</a></em> and seals it, if not performed by the <em><a href=#minter>Minter</a></em>.</li>
+</ul></li>
+</ul>
+
+<p>Optional fields:</p>
+
+<ul>
+<li><a name="coin__expiry_date"></a><code>expiry_date</code>: ISO 8601 timestamp recommended by the <em><a href=#minter>Minter</a></em> to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,</li>
+<li><a name="coin__public_key"></a><code>public_key</code>: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the <em><a href=#blacklight>Blacklight</a></em> which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,</li>
+<li>if homologue fields on the Coin's <em><a href=#model>Model</a></em> are present, mandatory if absent:
+<ul>
+<li><a name="coin__quantity"></a><code>quantity</code>: decimal number representing the quantity of <em><a href=#asset-type>Asset Type</a></em> held by the Coin, if <em><a href=#model>Model</a></em>'s homologue field is present it overrides it otherwise it becomes mandatory,</li>
+</ul></li>
+<li>but depends on <a href="#coin__sealer"><code>sealer</code></a> to be set:
+<ul>
+<li><a name="coin__name"></a><code>name</code>: completes <a href="#model__name">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__description"></a><code>description</code>: completes <a href="#model__description">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__guarantee_duration"></a><code>guarantee_duration</code>: overrides <a href="#model__guarantee_duration">homologue field</a> on the <em><a href=#model>Model</a></em>, guarantee is then handled by the <em><a href="#coin__sealer">Sealer</a></em>,</li>
+<li><a name="coin__url"></a><code>url</code>: completes <a href="#model__url">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__asset_producer"></a><code>asset_producer</code>: overrides <a href="#model__asset_producer">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__asset_supplier"></a><code>asset_supplier</code>: overrides <a href="#model__asset_supplier">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__asset_manager"></a><code>asset_manager</code>: overrides <a href="#model__asset_manager">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__asset_vault"></a><code>asset_vault</code>: overrides <a href="#model__asset_vault">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
+<li><a name="coin__returnable"></a><code>returnable</code>: overrides <a href="#model__returnable">homologue field</a> on the <em><a href=#model>Model</a></em>, return is then handled by the <em><a href="#coin__sealer">Sealer</a></em>.</li>
+</ul></li>
+</ul>
+
+<p>The communication protocol between the <em><a href=#blacklight>Blacklight</a></em> and the microchip (for key signing and read-once self-erasing) isn't covered by these specifications, but it is likely to become a separated document. Other functions could be added to such microchips (e.g. holding the cryptocurrency's private key in memory instead of having it printed on the <em><a href=#coin>Coin</a></em>, read-once auto-erased cryptocurrency's private key, self-generating cryptocurrency's private key so the <em><a href=#minter>Minter</a></em> can never have access to it, etc.).</p>
+
+<p>Any other field can be freely added, except for homologue fields on the Coin's <em><a href=#model>Model</a></em>, please <a href="#crowdsourcing">contribute</a> to help improving and standardizing them.</p>
+
+<p>Optionally, a Coin record can be made private by having all its fields (except <code>checkoin_version</code>, <code>uuid</code> and <code>encrypted_signature</code>) serialized into a JSON string encrypted with the <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrase</em> of the Coin, then nested into the <code>encrypted</code> field. However it might slow down the <em><a href=#scan>Scan</a></em> process as the <em><a href=#blacklight>Blacklight</a></em> will have to decrypt it for the <em><a href=#blacklight>Blacklight</a></em>'s server.</p>
+
+<p>Example of the same record made private:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;gkcsSuW/7LBTkuCDgWhzaqG […] zp0mTW2oToB64alxc+YW2gR38b/sY=&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;encrypted_signature&quot;</span><span class="p">:</span> <span class="s2">&quot;GfAlfjuWnPeAhBy+cn3/bAddbzJU8e2AR0U126VFD3g=&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="visible-scan-data"><a name="visible-scan-data"></a>Visible Scan Data</h4>
+
+<p>An UUID with a unique dedicated Passphrase (of unspecified length), typically a QR Code visible on the outer surface of the object, preferably not requiring manual intervention to be unveiled it in order to facilitate mass scanning, along with the mention “Scan me with a Checkoin(.Org) Blacklight App”.</p>
+
+<p>The data can be presented in two formats:</p>
+
+<ul>
+<li>the 128 bits UUID immediately followed by the Passphrase,</li>
+<li>encapsulated and encoded in a URL:</li>
+</ul>
+
+<pre><code>http(s)://checkoin.org/ckn/UUID#PASSPHRASE
+</code></pre>
+
+<p>For security reasons the <em><a href=#blacklight>Blacklights</a></em> that will <em><a href=#scan>Scan</a></em> the data has to be third party components, this is a key element in <em><a href=#checkoin>Checkoin</a></em>'s security design. However, in case the user has no knowledge of <em><a href=#checkoin>Checkoin</a></em>, the Visible Scan Data should point out a neutral and safe location to download such a <em><a href=#blacklight>Blacklight</a></em> App. To do so, and in order to reduce the <a href="https://en.wikipedia.org/wiki/Single_point_of_failure">single point of failure</a> risk, the Visible Scan Data can propose multiple entry points for acquiring a <em><a href=#blacklight>Blacklight</a></em>:</p>
+
+<ul>
+<li>via the mention “Scan me with a Checkoin Blacklight App”, so the user is likely to search for a <em><a href=#blacklight>Blacklight</a></em> App via a search engine or his/her smartphone's application store,</li>
+</ul>
+
+<p>or</p>
+
+<ul>
+<li>via the mention “Scan me with a Checkoin.Org Blacklight App”, so the user is likely to visit <a href="http://checkoin.org">checkoin.org</a> to learn about Checkoin and find the list of <a href="#your-checkoin-service-or-product-highlighted">highlighted</a> <em><a href=#blacklight>Blacklights</a></em>, or search for a <em><a href=#blacklight>Blacklight</a></em> App via a search engine or his/her smartphone's application store,</li>
+</ul>
+
+<p>and/or</p>
+
+<ul>
+<li>by presenting the data in the URL format, so any QR Code reader will open the dedicated landing page on <a href="http://checkoin.org">checkoin.org</a> that may present some very basic information about the <em><a href=#coin>Coin</a></em>, <em><a href=#checkoin>Checkoin</a></em> itself, and for sure list the <a href="#crowdfunding">highlighted</a>' <em><a href=#blacklight>Blacklights</a></em> proposed for install. Once installed, the <em><a href=#blacklight>Blacklight</a></em> App should intercept URLs that match the <code>//checkoin.org/ckn/</code> pattern instead of letting it being opened by the default application.</li>
+</ul>
+
+<h4 id="sealed-cashing-data"><a name="sealed-cashing-data"></a>Sealed Cashing Data</h4>
+
+<p>Data allowing its holder to retrieve an asset in his/her possession without any other condition than being the first to claim it (typically the QR Code of an Armory cold storage wallet, offline wallet passphrase, the public+private key of a wallet, etc., but not limited to cryptocurrencies, it can give access to any redeemable asset). The data must be hidden by an irreversible seal which when opened shows obvious evidence of tampering to the naked eye (e.g. wax seal, thick scratch-card, etc.), or to the <em><a href=#blacklight>Blacklight</a></em> “eye” (e.g. read-once self-erasing microchip).</p>
+
+<p>For security reasons the <em><a href=#minter>Minter</a></em> should not store this data, but might want to keep a hash of it associated to the <em><a href=#coin>Coin</a></em>'s <code>uuid</code> (e.g. to authenticate a compromised <a href="#model__guarantee_duration">guaranteed</a> <em><a href=#coin>Coin</a></em> to be replaced).</p>
+
+<h3 id="blacklight"><a name="blacklight"></a>Blacklight</h3>
+
+<p>A device (or smartphone application, etc.) able to perform a <em><a href=#scan>Scan</a></em> of the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of a <em><a href=#coin>Coin</a></em>, exchange information about it with the <em><a href=#network>Network</a></em> (through its dedicated server), make verifications, and, if the <em><a href=#visible-scan-data>Visible Scan Data</a></em> is legit, display human readable information about the <em><a href=#coin>Coin</a></em>'s health.</p>
+
+<p>A Blacklight might also be able to scan multiple <em><a href=#coin>Coins</a></em> at once to provide a quick general estimation of a handful of <em><a href=#coin>Coins</a></em> (e.g. for cash registers Blacklights).</p>
+
+<p>The Blacklight <strong>mustn't ever send</strong> the <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrase</em> anywhere, if any encrypting or decrypting needs to be performed by the <em><a href=#blacklight>Blacklight</a></em>'s server (or any third device, software, entity, etc.), the information to be encrypted or decrypted must be sent to the Blacklight for it to perform the process and send back the result to the server. Any decrypted information sent by the <em><a href=#blacklight>Blacklight</a></em> mustn't be stored anywhere at anytime, and must have been erased from any cache memory once the <em><a href=#scan>Scan</a></em> process has ended on the user side.</p>
+
+<p>The communication protocol between the <em><a href=#blacklight>Blacklights</a></em> and their servers isn't covered by these specifications, but it is likely to become a separated open and standardized REST API. The <em><a href=#blacklight>Blacklights</a></em> are likely to communicate by default with servers owned and managed by their fabricators (for obvious technical an business model reasons), but they should be able to communicate with any server in an interoperable manner (while allowing some extra features to be server-specific), as a alternative or rescue option (e.g. partial Internet failure/censorship).</p>
+
+<p><em><a href=#blacklight>Blacklights</a></em> applications and devices also have a corresponding record on the <em><a href=#chain>Chain</a></em>.</p>
+
+<p>Self-explanatory example of a <em><a href=#blacklight>Blacklight</a></em> record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;19371937-193719371-9371-937193719371&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;fabricator&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1234[…]56789&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;software&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;platform&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;website&quot;</span><span class="p">:</span> <span class="s2">&quot;http://koinscan.com/app/&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><em><a href=#blacklight>Blacklights</a></em> are identified by their versions, in order to facilitate their <em><a href=#audit>Audits</a></em>.</p>
+
+<p>Self-explanatory example of a <em><a href=#blacklight>Blacklight</a></em> <em>Version</em> record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;48624862-486248624-8624-862486248624&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;19371937-193719371-9371-937193719371&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.8b&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Free</span>
+<span class="err">[…]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="scan"><a name="scan"></a>Scan</h4>
+
+<p>A Scan is the scanning process performed by the <em><a href=#blacklight>Blacklight</a></em>, and, unless the user explicitly asks for a “silent scan”, it also becomes a record on the <em><a href=#pool>Pool</a></em> about the time and location of the <em><a href=#blacklight>Blacklight</a></em> during the Scan (optionally encrypted). A “silent scan” doesn't mean that the geolocation information isn't sent to the <em><a href=#blacklight>Blacklight</a></em> server for consistency analysis, it means that it is not recorded, however, in such case of “silent scan”, the <em><a href=#blacklight>Blacklight</a></em> <strong>must</strong> ask the user if he/she agrees to have this data sent outside of the <em><a href=#blacklight>Blacklight</a></em>.</p>
+
+<p>The default action is to make such a record, but in some cases the <em><a href=#blacklight>Blacklight</a></em> can suggest the user to perform a “silent scan” (e.g. if the location is based on the IP address of the <em><a href=#blacklight>Blacklight</a></em> and there is a geographical incoherence the <em><a href=#blacklight>Blacklight</a></em> may ask “We detected a geographical mismatch. Are you using a VPN? If yes, you might want to perform a “silent scan” not to provide inconsistent information that can damage the integrity of the coin.”).</p>
+
+<p>Example of a Scan record:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;13713713-137137137-1371-371371371371&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;coin&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;48624862-486248624-8624-862486248624&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;blacklight_server&quot;</span><span class="p">:</span> <span class="s2">&quot;0x8888[…]88888&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;43.6023,1.4444&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;location_method&quot;</span><span class="p">:</span> <span class="s2">&quot;ipv4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;location_precision&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+ <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2121[…]21212&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Mandatory fields:</p>
+
+<ul>
+<li><a name="scan__checkoin_version"></a><code>checkoin_version</code>: the version of the <em><a href=#checkoin>Checkoin</a></em> specifications followed to mint the Scan,</li>
+<li><a name="scan__uuid"></a><code>uuid</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the Scan,</li>
+<li><a name="scan__coin"></a><code>coin</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the <em><a href=#coin>Coin</a></em>,</li>
+<li><a name="scan__blacklight"></a><code>blacklight</code>: the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> of the <em><a href=#blacklight>Blacklight</a></em> <em>Version</em>,</li>
+<li><a name="scan__blacklight_server"></a><code>blacklight_server</code>: the  <em><a href=#account>Account</a></em> address of the <em><a href=#blacklight>Blacklight</a></em> server's manager,</li>
+<li><a name="scan__location"></a><code>location</code>: a comma separated string of the two coordinates representing the geolocation of the <em><a href=#blacklight>Blacklight</a></em> when the Scan has been performed, as decimal degrees with negative numbers for South and West,</li>
+<li><a name="scan__location_method"></a><code>location_method</code>: a slug defining the method used for geolocalizing the <em><a href=#blacklight>Blacklight</a></em> when the Scan has been performed (e.g. "gps", "ipv4", "ipv6", "zipcode", "manual", "fixed_blacklight", etc.),</li>
+<li><a name="scan__location_precision"></a><code>location_precision</code>: integer defining the precision of the location in meters, -1 if unknown,</li>
+<li><a name="scan__date"></a><code>date</code>:  ISO 8601 timestamp of when Scan has been performed,</li>
+<li><a name="scan__signature"></a><code>signature</code>: <em><a href=#blacklight>Blacklight</a></em> server manager's signature of all the other fields alphabetically ordered and serialized in a non-indented JSON string, so it can be trusted by being replicated on the <em><a href=#pool>Pool</a></em>).</li>
+</ul>
+
+<p>For privacy reasons there is no free fields for this type of record.</p>
+
+<p>Upon user's request the fields <code>location</code>, <code>location_method</code> and <code>date</code> can be serialized into a JSON string encrypted with the <em><a href=#visible-scan-data>Visible Scan Data</a></em>'s <em>Passphrase</em> of the <em><a href=#coin>Coin</a></em>, and nested into the <code>encrypted</code> field. It allows to greatly reduce the possibility of tracking of the Scan by monitoring the <em><a href=#network>Network</a></em>, made virtually impossible to anyone not physically possessing the <em><a href=#coin>Coin</a></em> (except if previous user(s) made a copy of the <em>Passphrase</em> or leaked it). However this process may slow down the scan process as it involves more back and forth encrypting and decrypting communications between the <em><a href=#blacklight>Blacklight</a></em> and the <em><a href=#blacklight>Blacklight</a></em>'s server.</p>
+
+<p>Example of the same record partially encrypted:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="err">//</span> <span class="err">Mandatory</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev13-124d520&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;13713713-137137137-1371-371371371371&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;coin&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;0x8888[…]88888&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;9H/GQT0Ut4+zGTKVldc9AgXH8LRii7rOgYpG0Csf8W6oKBrZNndDmLNbay5gevDQeB</span>
+<span class="s2">aZf5mSWxEH3I5H7lQNn6TmO9GEi7+/eAZkCbh/t91Haya9/X5DXO&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2121[…]21212&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="checkoin"><a name="checkoin"></a>Checkoin</h3>
+
+<p>Checkoin may refer to <a href="http://checkoin.org/">checkoin.org</a>, the technology, its specifications and its instantiation, as well as the future non-profit and neutral entity representing Checkoin and its community. This entity will be conceived and set up after a period of observation of the <em><a href=#checkoin>Checkoin</a></em> ecosystem, and is likely to operate by its own rules upon smart contracts. Until then, this entity is its founder's natural person, Camille Harang. For the time being Checkoin is a codename, it might change – or not – by the time the first official specifications are being released.</p>
+
+<h2 id="getting-in"><a name="getting-in"></a>Getting in</h2>
+
+<p>Want to join the adventure? Great! Here are leads to <a href="#crowdsourcing">crowdsource</a> and <a href="#crowdfunding">crowdfund</a> <em><a href=#checkoin>Checkoin</a></em>. If you have other ideas on how to participate, please propose it by <a href="#crowdsourcing">contributing</a>.</p>
+
+<h3 id="crowdsourcing"><a name="crowdsourcing"></a>Crowdsourcing</h3>
+
+<p>If you wish to contribute to <em><a href=#checkoin>Checkoin</a></em>, you are welcome to do so by using the <a href="https://github.com/mammique/checkoin/">GitHub</a> tools, whether it be for technical improvements, remarks, questions, technology scouting, suggestions, or anything else. Please verify that there is no <a href="https://github.com/mammique/checkoin/issues">issue</a> covering the topic you wish to introduce beforehand, otherwise feel free to <a href="https://github.com/mammique/checkoin/issues/new">open one</a>. Once the topic has been discussed and decided you can fork the <a href="https://github.com/mammique/checkoin/blob/master/README.md">raw version</a> of this document and make a <a href="https://github.com/mammique/checkoin/pulls">pull request</a>. Don't forget to append you name to the <a href="#authors">authors</a> list if it's your first contribution.</p>
+
+<p>Each <a href="https://github.com/mammique/checkoin/blob/master/README.md">raw version</a> of this document (not the fair use illustrations of the <a href="http://checkoin.org">checkoin.org</a> website) is published under the <a href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons BY-ND</a> license in order to provide consistency and avoid confusion for each new version. But you are of course allowed to fork it to propose improvements to <em><a href=#checkoin>Checkoin</a></em>, also, by doing so, you allow <em><a href=#checkoin>Checkoin</a></em> to modify and republish your modifications under the same <a href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons BY-ND</a> license.</p>
+
+<h3 id="crowdfunding"><a name="crowdfunding"></a>Crowdfunding</h3>
+
+<p><em><a href=#checkoin>Checkoin</a></em> is an ambitious industrial project, it will require an adequate funding to match the required standards to manifest it into reality. To do so, you are invited to make donations to fuel the continuous “rolling crowdfunding”, meaning that the development <a href="#roadmap">roadmap</a> goes on as the funding comes in.</p>
+
+<p>If you wish to receive <a href="#rewards">reward(s)</a> while donating via “anonymous” cryptocurrencies, please <a href="https://checkoin.org/donations/register/">register your donation</a> <strong>before</strong> making the transaction.</p>
+
+<p>Donation methods:</p>
+
+<ul>
+<li><strong>Bitcoin</strong>:  1P89rsq6HxAPSi3CAaFEEagdqWbe2T6imc</li>
+<li><strong>Ether</strong>: 0x1b526A1c151a5803597a8bc04cd1230a5bF2CB38</li>
+<li><strong>Goldmoney</strong>: mammique@garbure.org (preferably Singapore or Zurich vaults if possible)</li>
+<li><strong>PayPal</strong>: mammique@gmail.com</li>
+</ul>
+
+<h4 id="rewards"><a name="rewards"></a>Rewards</h4>
+
+<p>If you are donating via “anonymous” cryptocurrencies, please <a href="https://checkoin.org/donations/register/">register your donation</a> <strong>before</strong> making the transaction.</p>
+
+<p>The rewards will be distributed accordingly to the amount of the donation (that can be cumulated with other donations later on), with an advantage for the early donors (based on a timing ratio factor to be determined).</p>
+
+<p><a href="#crowdsourcing">Contributors</a> will also be eligible for rewards, but remember that one's work estimation is very subjective, depending on the time invested, experience, skills, ego, efficiency, aspirations, rivalry, etc. <em><a href=#checkoin>Checkoin</a></em> will make efforts to be as fair and grateful as possible on this, but a disclaimer is required: if you have high expectations on rewards and are easily disappointed, you might want to go for a donation instead.</p>
+
+<p>The rewards will be defined and adjusted in an empirical manner. I (Camille Harang, founder) had the idea of <em><a href=#checkoin>Checkoin</a></em> after discovering the <a href="https://twitter.com/mammique/status/708265686670450689">Satori Coin</a>, I first started to conceive innovative physical cryptocoins, before realizing that a technology like <em><a href=#checkoin>Checkoin</a></em> needed to be implemented beforehand to allow these <em><a href=#coin>Coins</a></em> to circulate safely. After having dedicated myself to this task, I reserve the right to be eligible to reward(s), whether I want to dive into the minting adventure, or not… That's why I came up with the idea of the “<a href="#your-checkoin-service-or-product-highlighted">highlight service or product</a>” reward, in case I still feel like proposing <em><a href=#checkoin>Checkoin</a></em> service(s) in the future. But that's a very subjective idea, maybe you'd like something else that I didn't think about? That's why you are invited to <a href="#you-choose">choose</a> your reward!</p>
+
+<h5 id="you-choose"><a name="you-choose"></a>→ You choose!</h5>
+
+<p>Please <a href="#crowdsourcing">contribute</a> to propose reward(s) you would like to receive. It can be anything as long as it doesn't threat to jeopardize or alter the project (e.g. technological security or privacy disruptions, unclear conflict of interest, etc.),</p>
+
+<h5 id="your-checkoin-service-or-product-highlighted"><a name="your-checkoin-service-or-product-highlighted"></a>→ Your Checkoin service or product highlighted</h5>
+
+<p>The website <a href="https://checkoin.org/">checkoin.org</a> will list upon request any service or product related to <em><a href=#checkoin>Checkoin</a></em> (<em><a href=#blacklight>Blacklights</a></em>, <em><a href=#model>Models</a></em>, <em><a href=#minter>Minters</a></em>, <em><a href=#auditor>Auditors</a></em>, market places for <em><a href=#coin>Coins</a></em>, <a href="#model__asset_producer">Asset Producers</a>, <a href="#model__asset_supplier">Asset Suppliers</a>, <a href="#model__asset_manager">Asset Managers</a>, <a href="#model__asset_vault">Asset Vaults</a>, etc.), but the donors' products and services will be highlighted on the top of the lists. If you want your company to become the CoinBase-like or BitPay-like of the <em><a href=#checkoin>Checkoin</a></em>'s ecosystem, this highlight might be the competition advantage that'll make the difference. The duration and position of the highlight will depend of the donor's choice, according to the amount and of the donation (with a maximum of 3 years for the highest donation), and starts whenever the donor decides so.</p>
+
+<h5 id="a-hrefhttpsenwikipediaorgwikiseigniorageseignioragea-on-the-future-emcheckoinems-currency-money-supply"><a name="a-hrefhttpsenwikipediaorgwikiseigniorageseignioragea-on-the-future-emcheckoinems-currency-money-supply"></a>→ <a href="https://en.wikipedia.org/wiki/Seigniorage">Seigniorage</a> on the future <em><a href=#checkoin>Checkoin</a></em>'s currency money supply</h5>
+
+<p>Originally <em><a href=#checkoin>Checkoin</a></em> is not a currency, just a physical transport layer for third party assets. However, once <em><a href=#checkoin>Checkoin</a></em> will be up and running, and after a period of observation, <em><a href=#checkoin>Checkoin</a></em> will research and develop a currency that will be specifically dedicated to physical cryptocoins (likely to run upon the technology running <em><a href=#chain>Chain</a></em>), and tailor made to the specificities of <em><a href=#checkoin>Checkoin</a></em> and its ecosystem. For example, its value could be expression of the average of all the circulating assets, and be proposed as the stable currency of reference for stating prices on <em><a href=#blacklight>Blacklights</a></em>, price tags, etc. This currency will be independent from <em><a href=#checkoin>Checkoin</a></em>, or autonomous (e.g. definitive smart contracts), its money supply and eventual growth are to be defined, please <a href="#crowdsourcing">contribute</a> to propose other features and characteristics for this future currency. The donors will have a <a href="https://en.wikipedia.org/wiki/Seigniorage">seigniorage</a> privilege on the initial money supply of this currency, proportionally to the amount and timing of their donation.</p>
+
+<h2 id="roadmap"><a name="roadmap"></a>Roadmap</h2>
+
+<ul>
+<li>Collaborative writing and finalization of the first specifications,</li>
+<li>Official website for the community, development, documentation, business meeting point, etc.</li>
+<li>Technology scouting,</li>
+<li>Open Source implementation of the <em><a href=#chain>Chain</a></em>, <em><a href=#pool>Pool</a></em>, and directly related software,</li>
+<li>Instantiation of the <em><a href=#chain>Chain</a></em>,</li>
+<li>Development of Open Source SDK &amp; libraries for third party software,</li>
+<li>Research, development and release of the <em><a href=#checkoin>Checkoin</a></em> currency.</li>
+</ul>
+
+<h2 id="authors"><a name="authors"></a>Authors</h2>
+
+<ul>
+<li><a href="https://www.hopwork.fr/profile/camilleharang">Camille Harang</a> (senior developer).</li>
+<li>Santiago.</li>
+</ul>
+
+<h2 id="thanks"><a name="thanks"></a>Thanks</h2>
+
+<ul>
+<li><a href="https://www.gandi.net/">Gandi</a>, for hosting (<em>no bullshit™</em> Bitcoin domain name and hosting services).</li>
+<li><a href="https://www.corbettreport.com/">The Corbett Report</a>, for inspiration (Open Source Intelligence News).</li>
+<li><a href="https://twitter.com/rachelrepeat">@rachelrepeat</a>, for inspiration.</li>
+<li><a href="https://twitter.com/pachinee">@pachinee</a>, for support.</li>
+<li><a href="https://twitter.com/kouzkouzrabbit">@kouzkouzrabbit</a>, for support.</li>
+<li><a href="https://twitter.com/Carole_Fabre">@Carole_Fabre</a>, for support (<a href="http://revenudebase.info/">French Movement for a Basic Income</a> &amp; <a href="http://duniter.fr/">Duniter</a>).</li>
+<li>Chris Thorpe, for support (<a href="http://monnaiehonnete.net/">Positive Money France</a>).</li>
+<li>Mom, for support.</li>
+<li><a href="http://wiki.p2pfoundation.net/Michel_Bauwens">Michel Bauwens</a>, for <a href="https://twitter.com/mbauwens/status/718080947124572161">promoting</a> and <a href="https://twitter.com/mammique/status/759030177670148097">advise</a> (P2P Foundation).</li>
+<li><a href="https://rogerver.com/">Roger Ver</a>, for <a href="https://forum.bitcoin.com/viewtopic.php?t=6935&amp;p=20285">promoting</a> (Bitcoin Jesus).</li>
+<li><a href="https://mineoncloud.com/en/">mineoncloud</a>, for advise.</li>
+</ul>
+
+        </div>
+
+    </div>
+</div>
+
+        <noscript><!-- No JS? Got HD! -->
+            <video class="they_carry_gold hd" controls> 
+               <source src="media/they_carry_gold.mp4" type="video/mp4">
+               <source src="media/they_carry_gold.webm" type="video/webm">
+               <source src="media/they_carry_gold.ogg" type="video/ogg">
+            </video>
+        </noscript>
+
+        <video class="they_carry_gold hd" preload="none">
+           <source src="media/they_carry_gold.mp4" type="video/mp4">
+           <source src="media/they_carry_gold.webm" type="video/webm">
+           <source src="media/they_carry_gold.ogg" type="video/ogg">
+        </video>
+
+        <video class="they_carry_gold small" preload="none"> 
+           <source src="media/they_carry_gold_small.mp4" type="video/mp4">
+           <source src="media/they_carry_gold_small.webm" type="video/webm">
+           <source src="media/they_carry_gold_small.ogg" type="video/ogg">
+        </video>
+
+        <div id="play"></div>
+
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/script.js"></script>
+
+    </body>
+
+</html>

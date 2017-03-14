@@ -203,3 +203,22 @@ noscript video {
         top: 21vw;
     }
 }
+
+/* Anim */
+
+#anim #embed {
+    margin: 10vh 0 20px 0;
+}
+
+#anim #embed iframe {
+    width: 62.2vw;
+    height: 35vw;
+}
+
+#anim .btn {
+    margin: 0 12px;
+}
+
+#anim .col {
+    text-align: center;
+}
