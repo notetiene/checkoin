@@ -259,6 +259,11 @@ Example of a Model record:
  "minter": "0x3333[…]44444",
  "name": "0.05Ƀ Limited Red Watermark",
  "date": "2016-03-23",
+
+// Mandatory, or must have homologue fields for each Coin of this Model.
+ "asset_type": "10101010-101010101-0101-010101010101",
+ "quantity": 0.05,
+ "cashing_method": "armory",
  "illustrations": [
     {
      "mime": "image/jpeg",
@@ -275,11 +280,6 @@ Example of a Model record:
      "pool_uuid": "77777777-777777777-7777-777777777777",
     },
  ],
-
-// Mandatory, or must have homologue fields for each Coin of this Model.
- "asset_type": "10101010-101010101-0101-010101010101",
- "quantity": 0.05,
- "cashing_method": "armory",
 
 // Optional
  "check_info": {
@@ -312,7 +312,7 @@ Mandatory fields:
 - ```quantity```: decimal number representing the quantity of *Asset Type* held by each *Coin* of this Model, this field can be overridden by the same [```quantity```](#coin__quantity) field of the *Coin* if present,
 - ```cashing_method```: a slug representing the method to be used to cash *Coins* of this Model (e.g. "armory", "pub\_priv\_keys", "goldmoney\_coupon", etc.),
 - ```date```: ISO 8601 timestamp of the date of the Model,
-- ```illustrations```: a list of media resource(s) that illustrate this Model of *Coin*, media resource fields are:
+- ```illustrations```: a list of media resource(s) that illustrate this Model of *Coin*, this field can be overridden by the same [```illustrations```](#coin__illustrations) field of each *Coin* of this Model if present, media resource fields are:
     - ```mime```: the mime type of the media (mandatory),
     - ```url``` or ```pool_uuid```: to retrieve the media (mandatory),
     - ```type```: a slug indicating what the media stands for (optional).
@@ -372,6 +372,18 @@ Example of a Coin record:
 
 // Optional if homologue fields on the Coin's Model are present, mandatory if absent.
  "quantity": 0.01,
+ "illustrations": [
+    {
+     "mime": "image/jpeg",
+     "type": "heads",
+     "url": "http://secoin.io/pics/005BTC_lrw_heads_123456.jpg",
+    },
+    {
+     "mime": "image/jpeg",
+     "type": "tails",
+     "url": "http://secoin.io/pics/005BTC_lrw_tails_123456.jpg",
+    },
+ ],
 
 // Optional but depends on `sealer` to be set.
  "name": "0.01Ƀ.",
@@ -387,10 +399,7 @@ Example of a Coin record:
 // Optional
  "expiry_date": "2018-03-14T04:53:32",
  "public_key": "0x2222[…]11011",
- "check_info": {
-     "en_GB": "Do something.",
-     "fr_FR": "Faire quelque chose."
- },
+ "public_key": "0x2222[…]11011",
 
 // Free, except for homologue fields on the Coin's Model.
 […]
@@ -407,8 +416,8 @@ Mandatory fields:
 - ```preloaded```: boolean indicating if the Coin was provided by the *Minter* with the asset present at the ```asset_pointer``` (e.g. “US government” “forbids” to sell preloaded cryptocoins, it has to be loaded later on by the user),
 - ```encrypted_signature```: *Minter*'s signature of all the other fields (mandatory, optional and free) alphabetically ordered and serialized in a non-indented JSON string, then encrypted with the *Visible Scan Data*'s *Passphrase* of the Coin. So the holder of the Coin can prove he/she is physically holding it by making the *Blacklight* decoding the signature and make it match by the *Blacklight*'s server,
 - if homologue fields on the Coin's *Model* are absent:
- -  ```asset_type```: see [homologue field](#model__asset_type) on the *Model*,
- -  ```cashing_method```: see [homologue field](#model__cashing_method) on the *Model*,
+ - ```asset_type```: see [homologue field](#model__asset_type) on the *Model*,
+ - ```cashing_method```: see [homologue field](#model__cashing_method) on the *Model*,
 - if one or more above homologue fields are set:
  -  ```sealer```: the *Account* of the entity that places the *Asset* into the *Coin* and seals it, if not performed by the *Minter*.
 
@@ -418,6 +427,8 @@ Optional fields:
 - ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,
 - if homologue fields on the Coin's *Model* are present, mandatory if absent:
  - ```quantity```: decimal number representing the quantity of *Asset Type* held by the Coin, if *Model*'s homologue field is present it overrides it otherwise it becomes mandatory,
+ - ```illustrations```: see [homologue field](#model__illustrations) on the *Model*, to be used when the Coin does not look exactly as its *Model*'s [illustrations](#model__illustrations), because of handcrafting constraints, or because of security reasons (unique paint splash, coloured fibres inlaid in paper, etc.),
+
 - but depends on [```sealer```](#coin__sealer) to be set:
  - ```name```: completes [homologue field](#model__name) on the *Model*,
  - ```description```: completes [homologue field](#model__description) on the *Model*,

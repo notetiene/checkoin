@@ -349,6 +349,11 @@
  <span class="nt">&quot;minter&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3333[…]44444&quot;</span><span class="p">,</span>
  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05Ƀ Limited Red Watermark&quot;</span><span class="p">,</span>
  <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23&quot;</span><span class="p">,</span>
+
+<span class="err">//</span> <span class="err">Mandatory,</span> <span class="err">or</span> <span class="err">must</span> <span class="err">have</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">for</span> <span class="err">each</span> <span class="err">Coin</span> <span class="err">of</span> <span class="err">this</span> <span class="err">Model.</span>
+ <span class="nt">&quot;asset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+ <span class="nt">&quot;cashing_method&quot;</span><span class="p">:</span> <span class="s2">&quot;armory&quot;</span><span class="p">,</span>
  <span class="nt">&quot;illustrations&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
      <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
@@ -365,11 +370,6 @@
      <span class="nt">&quot;pool_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;77777777-777777777-7777-777777777777&quot;</span><span class="p">,</span>
     <span class="p">},</span>
  <span class="p">],</span>
-
-<span class="err">//</span> <span class="err">Mandatory,</span> <span class="err">or</span> <span class="err">must</span> <span class="err">have</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">for</span> <span class="err">each</span> <span class="err">Coin</span> <span class="err">of</span> <span class="err">this</span> <span class="err">Model.</span>
- <span class="nt">&quot;asset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
- <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
- <span class="nt">&quot;cashing_method&quot;</span><span class="p">:</span> <span class="s2">&quot;armory&quot;</span><span class="p">,</span>
 
 <span class="err">//</span> <span class="err">Optional</span>
  <span class="nt">&quot;check_info&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -403,7 +403,7 @@
 <li><a name="model__quantity"></a><code>quantity</code>: decimal number representing the quantity of <em><a href=#asset-type>Asset Type</a></em> held by each <em><a href=#coin>Coin</a></em> of this Model, this field can be overridden by the same <a href="#coin__quantity"><code>quantity</code></a> field of the <em><a href=#coin>Coin</a></em> if present,</li>
 <li><a name="model__cashing_method"></a><code>cashing_method</code>: a slug representing the method to be used to cash <em><a href=#coin>Coins</a></em> of this Model (e.g. "armory", "pub_priv_keys", "goldmoney_coupon", etc.),</li>
 <li><a name="model__date"></a><code>date</code>: ISO 8601 timestamp of the date of the Model,</li>
-<li><a name="model__illustrations"></a><code>illustrations</code>: a list of media resource(s) that illustrate this Model of <em><a href=#coin>Coin</a></em>, media resource fields are:
+<li><a name="model__illustrations"></a><code>illustrations</code>: a list of media resource(s) that illustrate this Model of <em><a href=#coin>Coin</a></em>, this field can be overridden by the same <a href="#coin__illustrations"><code>illustrations</code></a> field of each <em><a href=#coin>Coin</a></em> of this Model if present, media resource fields are:
 <ul>
 <li><a name="model__mime"></a><code>mime</code>: the mime type of the media (mandatory),</li>
 <li><a name="model__url"></a><code>url</code> or <code>pool_uuid</code>: to retrieve the media (mandatory),</li>
@@ -467,6 +467,18 @@
 
 <span class="err">//</span> <span class="err">Optional</span> <span class="err">if</span> <span class="err">homologue</span> <span class="err">fields</span> <span class="err">on</span> <span class="err">the</span> <span class="err">Coin&#39;s</span> <span class="err">Model</span> <span class="err">are</span> <span class="err">present,</span> <span class="err">mandatory</span> <span class="err">if</span> <span class="err">absent.</span>
  <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+ <span class="nt">&quot;illustrations&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+     <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;heads&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://secoin.io/pics/005BTC_lrw_heads_123456.jpg&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+     <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tails&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://secoin.io/pics/005BTC_lrw_tails_123456.jpg&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+ <span class="p">],</span>
 
 <span class="err">//</span> <span class="err">Optional</span> <span class="err">but</span> <span class="err">depends</span> <span class="err">on</span> <span class="err">`sealer`</span> <span class="err">to</span> <span class="err">be</span> <span class="err">set.</span>
  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;0.01Ƀ.&quot;</span><span class="p">,</span>
@@ -518,11 +530,14 @@
 <ul>
 <li><a name="coin__expiry_date"></a><code>expiry_date</code>: ISO 8601 timestamp recommended by the <em><a href=#minter>Minter</a></em> to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,</li>
 <li><a name="coin__public_key"></a><code>public_key</code>: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the <em><a href=#blacklight>Blacklight</a></em> which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,</li>
-<li>if homologue fields on the Coin's <em><a href=#model>Model</a></em> are present, mandatory if absent:
+<li><p>if homologue fields on the Coin's <em><a href=#model>Model</a></em> are present, mandatory if absent:</p>
+
 <ul>
 <li><a name="coin__quantity"></a><code>quantity</code>: decimal number representing the quantity of <em><a href=#asset-type>Asset Type</a></em> held by the Coin, if <em><a href=#model>Model</a></em>'s homologue field is present it overrides it otherwise it becomes mandatory,</li>
+<li><a name="coin__illustrations"></a><code>illustrations</code>: see <a href="#model__illustrations">homologue field</a> on the <em><a href=#model>Model</a></em>, to be used when the Coin does not look exactly as its <em><a href=#model>Model</a></em>'s <a href="#model__illustrations">illustrations</a>, because of handcrafting constraints, or because of security reasons (unique paint splash, coloured fibres inlaid in paper, etc.),</li>
 </ul></li>
-<li>but depends on <a href="#coin__sealer"><code>sealer</code></a> to be set:
+<li><p>but depends on <a href="#coin__sealer"><code>sealer</code></a> to be set:</p>
+
 <ul>
 <li><a name="coin__name"></a><code>name</code>: completes <a href="#model__name">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
 <li><a name="coin__description"></a><code>description</code>: completes <a href="#model__description">homologue field</a> on the <em><a href=#model>Model</a></em>,</li>
