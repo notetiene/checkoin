@@ -400,6 +400,7 @@ Example of a Coin record:
  "expiry_date": "2018-03-14T04:53:32",
  "public_key": "0x2222[…]11011",
  "public_key": "0x2222[…]11011",
+ "first_owner_batch_quantity": 10,
 
 // Free, except for homologue fields on the Coin's Model.
 […]
@@ -425,6 +426,7 @@ Optional fields:
 
 - ```expiry_date```: ISO 8601 timestamp recommended by the *Minter* to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,
 - ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,
+- ```first_owner_batch_quantity```: an integer indicating the number of Coins of this same *Model* received by the same first owner (in total, including previous batches if any), indeed, once Coins are in circulation, the probability of having many Coins of the same *Model* in one's hand is very low, which dissuades from counterfeiting (duplication costs are only worth for big quantities, each Coin being able to be duplicated only once without being detected if the original Coin is kept out of circulation by the counterfeiter), but this probability is higher when receiving the first batch, the lower the number of received Coins, the lower the counterfeiting risk,
 - if homologue fields on the Coin's *Model* are present, mandatory if absent:
  - ```quantity```: decimal number representing the quantity of *Asset Type* held by the Coin, if *Model*'s homologue field is present it overrides it otherwise it becomes mandatory,
  - ```illustrations```: see [homologue field](#model__illustrations) on the *Model*, to be used when the Coin does not look exactly as its *Model*'s [illustrations](#model__illustrations), because of handcrafting constraints, or because of security reasons (unique paint splash, coloured fibres inlaid in paper, etc.),
