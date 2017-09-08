@@ -66,7 +66,7 @@
                 <div id="doc_info">
                     <a href="http://creativecommons.org/licenses/by-nd/4.0/"><img src="/media/cc-by-nd_88x31.png" /></a>
                     <br />
-                    <label class="label label-primary">Version</label><span class="label label-default">pre-rfc_rev17-6aceed4</span>
+                    <label class="label label-primary">Version</label><span class="label label-default">pre-rfc_rev18-6d51af0</span>
                     <a id="twitter" href="https://twitter.com/checkoin">@checkoin</a>
                 </div>
             </div>
@@ -125,9 +125,11 @@
 <li>a stock of vintage wine or <a href="https://www.rt.com/business/331290-parmesan-italy-bank-bonds/">parmesan</a> listed on a stock exchange,</li>
 <li>a coupon for the local grocery store (then the <em><a href=#blacklight>Blacklight</a></em> should display the value of the asset according to the location, it is likely to value 0 half way around the world)</li>
 <li>a <a href="https://www.goldmoney.com/">Goldmoney</a> coupon (or the gold nugget itself, indeed if the asset is small enough, transportable and securely sealed it can replace the content of the <em><a href=#sealed-cashing-data>Sealed Cashing Data</a></em>),</li>
+<li>organic seeds,</li>
+<li>medicine,</li>
 <li>etc.</li>
 </ul></li>
-<li>If the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of a <em><a href=#coin>Coin</a></em> gets leaked on the Internet, or if a previous user kept note of it, there is the possibility of an attack on this <em><a href=#coin>Coin</a></em>'s integrity by making multiple forged scans with inconsistent time and location. This is unlikely to happen except for gratuitous malice or retaliation (e.g. an angry customer), but if the <em><a href=#coin>Coin</a></em> integrity gets damaged, it still has the value of the asset it holds, so, the damage is limited. Such an attack would be like smashing a Philharmonic gold coin with a hammer, it loose some of its value, but it's still gold. Furthermore, such attacks could be intercepted by the <em><a href=#blacklight>Blacklights</a></em>' servers with some pattern analysis.</li>
+<li>If the <em><a href=#visible-scan-data>Visible Scan Data</a></em> of a <em><a href=#coin>Coin</a></em> gets leaked on the Internet, or if a previous user kept note of it, there is the possibility of an attack on this <em><a href=#coin>Coin</a></em>'s integrity by making multiple forged scans with inconsistent time and location. This is unlikely to happen except for gratuitous malice or retaliation (e.g. an angry customer), but if the <em><a href=#coin>Coin</a></em> integrity gets damaged, it still has the value of the asset it holds, so, the damage is limited. Such an attack would be like smashing a Philharmonic gold coin with a hammer, it loose some of its value, but it's still gold. Furthermore, such attacks could be intercepted by the <em><a href=#blacklight>Blacklights</a></em>' servers with some pattern analysis (even if not detected immediately <a href="https://www.reddit.com/r/crypto/comments/6nc1nj/checkoin_physical_cryptocash/dka8hp9/">such an attack</a> can be reverted later on by excluding <em><a href=#scan>Scans</a></em> signed by corrupted <em><a href=#blacklight>Blacklight</a></em> <em><a href="#scan__blacklight_server">Server Managers</a></em>, then wrongfully corrupted <em><a href=#coin>Coins</a></em> recover their integrity).</li>
 <li>The circulation of <em><a href=#coin>Coins</a></em> passed from hand to hand can speed up the transaction process and relieve the traffic congestion on saturated cryptocurrencies like Bitcoin.</li>
 <li>Checkoin is more resilient against Internet failure/censorship than cryptocurrencies. Indeed, it doesn't require worldwide write access to allow exchanges to take place, the only writing that happens during an exchange is the <em><a href=#scan>Scan</a></em>, which is by design optional (“silent scan”) and can be replicated on the <em><a href=#network>Network</a></em> later on when Internet is restored (via the second <em><a href=#pool>Pool</a></em> layer). In case of Internet failure/censorship any database backup of the <em><a href=#checkoin>Checkoin</a></em> <em><a href=#network>Network</a></em> (including <a href="#model__illustrations">media ressources</a>) can operate in a local standalone mode (or within a regional <a href="https://en.wikipedia.org/wiki/Local_area_network">LAN</a>), with a reasonable short/middle term reliability before slowly deteriorating. Indeed, it will eventually suffer a lack of remote <em><a href=#scan>Scan</a></em> data at some point (especially if operating outside of a LAN) and ignore <em><a href=#coin>Coins</a></em> newly minted after the connexion loss. But only few minutes of sporadic Internet connexion some days in the week for synchronizing could keep it alive in the long term.</li>
 <li>There will always be counterfeiters, but <em><a href=#checkoin>Checkoin</a></em> makes it quite dissuasive and unworthy. Also, one of the reasons why counterfeiting has been so tempting in history of mankind is the monopoly on money supply, and artificial scarcity typical to economies of perpetual crisis. But with <em><a href=#checkoin>Checkoin</a></em> there is no such monopoly, it's an economy of abundance, anyone able to manufacture fake “coins” can more easily become a legit <em><a href=#minter>Minter</a></em>, which might also reduce this temptation.</li>
@@ -171,7 +173,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9876[…]54321&quot;</span><span class="p">,</span>
  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Etsy Minter Artist&quot;</span><span class="p">,</span>
 
@@ -204,7 +206,7 @@
 <p>Self-explanatory example of a <em>Seed Node</em> record:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;55555555-555555555-5555-555555555555&quot;</span><span class="p">,</span>
  <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1234[…]56789&quot;</span><span class="p">,</span>
  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;couchdb&quot;</span><span class="p">,</span>
@@ -272,7 +274,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;99999999-888888888-7777-666666666666&quot;</span><span class="p">,</span>
  <span class="nt">&quot;auditor&quot;</span><span class="p">:</span> <span class="s2">&quot;0x9876[…]54321&quot;</span><span class="p">,</span>
  <span class="nt">&quot;entry_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;11111111-222222222-3333-444444444444&quot;</span><span class="p">,</span>
@@ -305,7 +307,7 @@
 
 <p>Any other field can be freely added (<strong>except for Audits on Scan records</strong> for privacy reasons), please <a href="#crowdsourcing">contribute</a> to help improving and standardizing them.</p>
 
-<p><em><a href=#checkoin>Checkoin</a></em> do not provide nor recommend any method for analyzing this data, it's up to the <em><a href=#blacklight>Blacklight</a></em> fabricators and <em><a href=#auditor>Auditors</a></em> to innovate on this domain. However, <em><a href=#checkoin>Checkoin</a></em> might provide some toolkits and libraries <a href="#roadmap">in the future</a> that may include some standard Audit analysis algorithms.</p>
+<p><em><a href=#checkoin>Checkoin</a></em> does not provide nor recommends any method for analyzing this data, it's up to the <em><a href=#blacklight>Blacklight</a></em> fabricators and <em><a href=#auditor>Auditors</a></em> to innovate on this domain. However, <em><a href=#checkoin>Checkoin</a></em> might provide some toolkits and libraries <a href="#roadmap">in the future</a> that may include some standard Audit analysis algorithms.</p>
 
 <p>An Audit can be registered on the <em><a href=#chain>Chain</a></em> or on the <em><a href=#pool>Pool</a></em>, however an Audit registered on the <em><a href=#chain>Chain</a></em> might have more weight, as well as an Audit that is more recent.</p>
 
@@ -317,7 +319,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;10101010-101010101-0101-010101010101&quot;</span><span class="p">,</span>
  <span class="nt">&quot;registered_by&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0707[…]07070&quot;</span><span class="p">,</span>
  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bitcoin&quot;</span><span class="p">,</span>
@@ -344,7 +346,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
  <span class="nt">&quot;minter&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3333[…]44444&quot;</span><span class="p">,</span>
  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05Ƀ Limited Red Watermark&quot;</span><span class="p">,</span>
@@ -434,7 +436,7 @@
 <p>Example of the same record made private:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
  <span class="nt">&quot;encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;ggZMZngTm0XZMO+RMwm2UY7OCP+yjohaMwt1 […] zqsOIryyuq0czymOFPtjMh+DB/c5A=&quot;</span>
 <span class="p">}</span>
@@ -450,7 +452,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
  <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678-901234567-8901-234567890123&quot;</span><span class="p">,</span>
  <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-03-23T11:11:00+11:11&quot;</span><span class="p">,</span>
@@ -559,7 +561,7 @@
 <p>Example of the same record made private:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
  <span class="nt">&quot;encrypted&quot;</span><span class="p">:</span> <span class="s2">&quot;gkcsSuW/7LBTkuCDgWhzaqG […] zp0mTW2oToB64alxc+YW2gR38b/sY=&quot;</span><span class="p">,</span>
  <span class="nt">&quot;encrypted_signature&quot;</span><span class="p">:</span> <span class="s2">&quot;GfAlfjuWnPeAhBy+cn3/bAddbzJU8e2AR0U126VFD3g=&quot;</span><span class="p">,</span>
@@ -620,7 +622,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;19371937-193719371-9371-937193719371&quot;</span><span class="p">,</span>
  <span class="nt">&quot;fabricator&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1234[…]56789&quot;</span><span class="p">,</span>
  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;software&quot;</span><span class="p">,</span>
@@ -639,7 +641,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;48624862-486248624-8624-862486248624&quot;</span><span class="p">,</span>
  <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;19371937-193719371-9371-937193719371&quot;</span><span class="p">,</span>
  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.8b&quot;</span><span class="p">,</span>
@@ -660,7 +662,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;13713713-137137137-1371-371371371371&quot;</span><span class="p">,</span>
  <span class="nt">&quot;coin&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
  <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;48624862-486248624-8624-862486248624&quot;</span><span class="p">,</span>
@@ -696,7 +698,7 @@
 
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="err">//</span> <span class="err">Mandatory</span>
- <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev17-6aceed4&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;checkoin_version&quot;</span><span class="p">:</span> <span class="s2">&quot;pre-rfc_rev18-6d51af0&quot;</span><span class="p">,</span>
  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;13713713-137137137-1371-371371371371&quot;</span><span class="p">,</span>
  <span class="nt">&quot;coin&quot;</span><span class="p">:</span> <span class="s2">&quot;33333333-444444444-4444-333333333333&quot;</span><span class="p">,</span>
  <span class="nt">&quot;blacklight&quot;</span><span class="p">:</span> <span class="s2">&quot;0x8888[…]88888&quot;</span><span class="p">,</span>
@@ -792,6 +794,7 @@
 <li><a href="https://mineoncloud.com/en/">MineOnCloud</a>, for advise.</li>
 <li><a href="https://twitter.com/AlassoAsso">Alasso</a>, for voice-over.</li>
 <li>Dorothee, for voice-over.</li>
+<li><a href="https://www.reddit.com/user/mr_bitshift">mr_bitshift</a>, for reviewing.</li>
 </ul>
 
         </div>
