@@ -59,6 +59,7 @@
                     <li class="list-group-item"><a href="#definitions">Definitions</a></li>
                     <li class="list-group-item"><a href="#getting-in">Getting in</a></li>
                     <li class="list-group-item"><a href="#roadmap">Roadmap</a></li>
+                    <li class="list-group-item"><a href="#side-projects">Side projects</a></li>
                     <li class="list-group-item"><a href="#authors">Authors</a></li>
                     <li class="list-group-item"><a href="#thanks">Thanks</a></li>
                     </ul>
@@ -103,7 +104,7 @@
 <li><a href="#model__illustrations">picture</a> and other informations about of the <em><a href=#coin>Coin</a></em> provided by the <em><a href=#minter>Minter</a></em>,</li>
 <li>instant market value of the asset held by the <em><a href=#coin>Coin</a></em> and of the <em><a href=#coin>Coin</a></em> itself (as well as trends, how to resell it, etc.),</li>
 <li>how to perform eventual <a href="#model__check_info">extra security checks</a> (e.g. for <em><a href=#coin>Coins</a></em> with holograms, watermarks, UV ink, <a href="#coin__public_key">key signing microchips</a>, etc.),</li>
-<li>USB cryptographic check for <em><a href=#coin>Coins</a></em> holding a <a href="#coin__public_key">key signing microchip</a>,</li>
+<li>cryptographic check for <em><a href=#coin>Coins</a></em> holding a <a href="#coin__public_key">key signing microchip</a>,</li>
 <li>is the <em><a href=#coin>Coin</a></em> <a href="#model__guarantee_duration">guaranteed</a>,</li>
 <li>analysis of the informations of reliability provided by the <em><a href=#auditor>Auditors</a></em> about the <em><a href=#coin>Coin</a></em>, the <em><a href=#model>Model</a></em>, the <em><a href=#minter>Minter</a></em>, etc.,</li>
 <li>general good practice advises for the end user (e.g. which questions should I ask to the person who hands me the <em><a href=#coin>Coin</a></em> based on the analysis),</li>
@@ -529,7 +530,7 @@
 
 <ul>
 <li><a name="coin__expiry_date"></a><code>expiry_date</code>: ISO 8601 timestamp recommended by the <em><a href=#minter>Minter</a></em> to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,</li>
-<li><a name="coin__public_key"></a><code>public_key</code>: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the <em><a href=#blacklight>Blacklight</a></em> which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,</li>
+<li><a name="coin__public_key"></a><code>public_key</code>: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. <a href="#anti-counterfeiting-microchip">flat printed circuit USB pins, NFC, PUF, etc.</a>), the user plugs the Coin to the <em><a href=#blacklight>Blacklight</a></em> which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,</li>
 <li><a name="coin__first_owner_batch_quantity"></a><code>first_owner_batch_quantity</code>: an integer indicating the number of Coins of this same <em><a href=#model>Model</a></em> received by the same first owner (in total, including previous batches if any), indeed, once Coins are in circulation, the probability of having many Coins of the same <em><a href=#model>Model</a></em> in one's hand is very low, which dissuades from counterfeiting (duplication costs are only worth for big quantities, each Coin being able to be duplicated only once without being detected if the original Coin is kept out of circulation by the counterfeiter), but this probability is higher when receiving the first batch, the lower the number of received Coins, the lower the counterfeiting risk,</li>
 <li><p>if homologue fields on the Coin's <em><a href=#model>Model</a></em> are present, mandatory if absent:</p>
 
@@ -770,6 +771,16 @@
 <li>Development of Open Source SDK &amp; libraries for third party software,</li>
 <li>Research, development and release of the <em><a href=#checkoin>Checkoin</a></em> currency.</li>
 </ul>
+
+<h2 id="side-projects"><a name="side-projects"></a>Side projects</h2>
+
+<h3 id="kisschain"><a name="kisschain"></a>KissChain</h3>
+
+<p><a href="https://github.com/mammique/checkoin/blob/master/misc/kisschain.md">KissChain</a> is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).</p>
+
+<h3 id="anti-counterfeiting-microchip"><a name="anti-counterfeiting-microchip"></a>Anti-counterfeiting microchip</h3>
+
+<p>Solution for authenticating physical goods that are subject to counterfeiting (<a href="http://www.metzdowd.com/pipermail/cryptography/2017-September/032715.html">metzdowd cryptography</a>, <a href="https://www.reddit.com/r/crypto/comments/6y7orv/anticounterfeiting_microchip/">reddit</a>).</p>
 
 <h2 id="authors"><a name="authors"></a>Authors</h2>
 

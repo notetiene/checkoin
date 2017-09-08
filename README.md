@@ -29,7 +29,7 @@ Here follows a non-exhaustive list of informations and services that the *Blackl
 - [picture](#model__illustrations) and other informations about of the *Coin* provided by the *Minter*,
 - instant market value of the asset held by the *Coin* and of the *Coin* itself (as well as trends, how to resell it, etc.),
 - how to perform eventual [extra security checks](#model__check_info) (e.g. for *Coins* with holograms, watermarks, UV ink, [key signing microchips](#coin__public_key), etc.),
-- USB cryptographic check for *Coins* holding a [key signing microchip](#coin__public_key),
+- cryptographic check for *Coins* holding a [key signing microchip](#coin__public_key),
 - is the *Coin* [guaranteed](#model__guarantee_duration),
 - analysis of the informations of reliability provided by the *Auditors* about the *Coin*, the *Model*, the *Minter*, etc.,
 - general good practice advises for the end user (e.g. which questions should I ask to the person who hands me the *Coin* based on the analysis),
@@ -427,7 +427,7 @@ Mandatory fields:
 Optional fields:
 
 - ```expiry_date```: ISO 8601 timestamp recommended by the *Minter* to cash the Coin, whether it be because of the physical lifetime of the Coin or of the asset,
-- ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. flat printed circuit USB pins), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,
+- ```public_key```: the public key of the Coin, in case it carries a key signing microchip holding the corresponding private key (e.g. [flat printed circuit USB pins, NFC, PUF, etc.](#anti-counterfeiting-microchip)), the user plugs the Coin to the *Blacklight* which sends it a random message to be signed, and finally checks the resulting signature against the public key for authentication,
 - ```first_owner_batch_quantity```: an integer indicating the number of Coins of this same *Model* received by the same first owner (in total, including previous batches if any), indeed, once Coins are in circulation, the probability of having many Coins of the same *Model* in one's hand is very low, which dissuades from counterfeiting (duplication costs are only worth for big quantities, each Coin being able to be duplicated only once without being detected if the original Coin is kept out of circulation by the counterfeiter), but this probability is higher when receiving the first batch, the lower the number of received Coins, the lower the counterfeiting risk,
 - if homologue fields on the Coin's *Model* are present, mandatory if absent:
  - ```quantity```: decimal number representing the quantity of *Asset Type* held by the Coin, if *Model*'s homologue field is present it overrides it otherwise it becomes mandatory,
@@ -643,6 +643,16 @@ Originally *Checkoin* is not a currency, just a physical transport layer for thi
 - Instantiation of the *Chain*,
 - Development of Open Source SDK & libraries for third party software,
 - Research, development and release of the *Checkoin* currency.
+
+## Side projects
+
+### KissChain
+
+[KissChain](https://github.com/mammique/checkoin/blob/master/misc/kisschain.md) is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).
+
+### Anti-counterfeiting microchip
+
+Solution for authenticating physical goods that are subject to counterfeiting ([metzdowd cryptography](http://www.metzdowd.com/pipermail/cryptography/2017-September/032715.html), [reddit](https://www.reddit.com/r/crypto/comments/6y7orv/anticounterfeiting_microchip/)).
 
 ## Authors
 
