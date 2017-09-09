@@ -648,7 +648,7 @@ Originally *Checkoin* is not a currency, just a physical transport layer for thi
 
 ### KissChain
 
-[KissChain](https://github.com/mammique/checkoin/blob/master/misc/kisschain.md) is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).
+[KissChain](/misc/kisschain.html) is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).
 
 ### Anti-counterfeiting microchip
 

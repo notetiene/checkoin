@@ -226,3 +226,12 @@ noscript video {
 #anim .col {
     text-align: center;
 }
+
+#kisschain ol li {
+    margin-bottom: 10px;
+}
+
+#kisschain p:first-of-type {
+    font-size: 24px;
+    color: #612600;
+}

@@ -1,6 +1,6 @@
 # KissChain
 
-### KissChain is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).
+**KissChain is a technical proposal for getting rid of tedious issues related to proof-of-stakes blockchains, instead of solving them, by following the KISS principle (Keep It Stupid, Simple).**
 
 The first issue are the sophisticated but imperfect heuristics used to workaround network inconsistencies inherent to P2P networks, caused by accidental or malicious behaviors from participating nodes. KissChain does not tolerate such inconsistencies, nodes are rewarded for matching the network's requirements, or banned. In case of inconsistency the whole network is down, entering "cacophony mode", it is then forced to identify with certainty bad nodes, ban them, and starts over minting the chain from where it was before the inconsistency happened. There are no sophisticated tricks and tweaks to continue minting the blockchain despite problems inherent to P2P networks, but a strong all-or-nothing heuristic KISS signal that needs to be dealt with right away with no mercy by the totality of the network.
 
@@ -18,21 +18,20 @@ In the case of a node entering "cacophony mode" because being in the fringe of t
 
 In the case of a block not being claimed because of the winner node being down, the network would enter in "cacophony mode" as well, but figure out that it is consistent, therefore simply blacklisting the winning public-reward-key of the unclaimed block, until it gets unlocked by a dedicated "unlock message", signed with its corresponding private-reward-key when the node gets back online.
 
-### Notes
+## Notes
 
-(1) In order to allow initial reward-key purchases, some coins need to be available at first (e.g. a fraction of pre-minted coins sold for development funding, or any other solution). The cost for registering a reward-key must be at least the number of coins rewarded for minting a new block, in order to prevent their exponential number. This price should be adjusted between making it dissuasive to register malicious nodes, keeping the number of nodes large enough for having a really decentralized P2P network, and small enough for it to remain consistent (probably a few thousands). A special transaction has to be sent for purchasing a reward-key, unlike when simply spending coins with outgoing/incoming wallet addresses, here the node sends it self-generated public-reward-key (needless to say while keeping the private key private) along with the coins, in return the network makes the coins available again to minters as "orphaned coins" for the new block discovery, and register the new public-reward-key on the blockchain. A reward-key can be replaced by a new (or predefined) one if it is suspected by the owner to be corrupted/stolen. New coins being rewarded or reimbursed should first come from the  "orphaned coins pool" if not empty, otherwise they should be newly created. The available monetary mass may inflate or shrink depending of the market demand for reward-keys (minting) or liquidity, this policy should be discussed and algorithmically adjusted in the specs (e.g. "orphaned coins pool" cannot represent more than 10% of the minted coins).
+1. In order to allow initial reward-key purchases, some coins need to be available at first (e.g. a fraction of pre-minted coins sold for development funding, or any other solution). The cost for registering a reward-key must be at least the number of coins rewarded for minting a new block, in order to prevent their exponential number. This price should be adjusted between making it dissuasive to register malicious nodes, keeping the number of nodes large enough for having a really decentralized P2P network, and small enough for it to remain consistent (probably a few thousands). A special transaction has to be sent for purchasing a reward-key, unlike when simply spending coins with outgoing/incoming wallet addresses, here the node sends it self-generated public-reward-key (needless to say while keeping the private key private) along with the coins, in return the network makes the coins available again to minters as "orphaned coins" for the new block discovery, and register the new public-reward-key on the blockchain. A reward-key can be replaced by a new (or predefined) one if it is suspected by the owner to be corrupted/stolen. New coins being rewarded or reimbursed should first come from the  "orphaned coins pool" if not empty, otherwise they should be newly created. The available monetary mass may inflate or shrink depending of the market demand for reward-keys (minting) or liquidity, this policy should be discussed and algorithmically adjusted in the specs (e.g. "orphaned coins pool" cannot represent more than 10% of the minted coins).
+2. Outgoing transaction's addresses are used for the checksum because they cannot be forged on-the-fly to alter the resulting hash. Otherwise using full transactions for calculating the "winning hash", nodes could try to forge and inject one transaction at the last second, playing with decimals to get the closest result to one of their public-reward-key.
+3. http://www.tik.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf
+4. Quarantine duration should be incremental for each ban, e.g.: 3h, 12h, 72h, 2 weeks, 4 months, one year, etc.
+5. Any node signing more than one different block for the same head number will be banned (4) and its data ignored.
+6. In "cacophony mode" marginal blocks that are not widespread and lacking transactions number should be ignored, they are more likely to be on the fringe of the network, not having received some transactions on time because of QoS-like issues.
 
-(2) Outgoing transaction's addresses are used for the checksum because they cannot be forged on-the-fly to alter the resulting hash. Otherwise using full transactions for calculating the "winning hash", nodes could try to forge and inject one transaction at the last second, playing with decimals to get the closest result to one of their public-reward-key.
+## Authors
 
-(3) http://www.tik.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf
+- Camille Harang
 
-(4) Quarantine duration should be incremental for each ban, e.g.: 3h, 12h, 72h, 2 weeks, 4 months, one year, etc.
-
-(5) Any node signing more than one different block for the same head number will be banned (4) and its data ignored.
-
-(6) In "cacophony mode" marginal blocks that are not widespread and lacking transactions number should be ignored, they are more likely to be on the fringe of the network, not having received some transactions on time because of QoS-like issues.
-
-### Thanks
+## Thanks
 
 - Karl Semich
 - Natanael L

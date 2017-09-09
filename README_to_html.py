@@ -4,11 +4,11 @@
 import markdown2, commands
 from slugify import slugify
 
-header  = open('header.html').read().decode('utf-8')
-readme  = open('README.md').read().decode('utf-8').split('\n')
-title   = u'\n'.join(readme[0:2])
-content = u'\n'.join(readme[3:])
-footer  = open('footer.html').read().decode('utf-8')
+header_raw = open('header.html').read().decode('utf-8')
+readme     = open('README.md').read().decode('utf-8').split('\n')
+title      = u'\n'.join(readme[0:2])
+content    = u'\n'.join(readme[3:])
+footer     = open('footer.html').read().decode('utf-8')
 
 title_html = markdown2.markdown(title).replace('<h1', '<h1 id="top"')
 
@@ -21,6 +21,30 @@ version       = u'pre-rfc_rev%s-%s' % (version_count, version_uuid)
 
 navs = [u'<li class="list-group-item"><a href="#top">Checkoin</a></li>']
 defs = []
+
+header = header_raw + """
+    <body data-spy="scroll" data-target="#menu">
+
+        <noscript><!-- No JS? Got HD! -->
+            <video class="tuco_bites_coin hd" loop autoplay>
+               <source src="/media/tuco_bites_coin.mp4" type="video/mp4">
+               <source src="/media/tuco_bites_coin.webm" type="video/webm">
+               <source src="/media/tuco_bites_coin.ogg" type="video/ogg">
+            </video>
+        </noscript>
+
+        <video class="tuco_bites_coin hd" loop preload="none">
+           <source src="/media/tuco_bites_coin.mp4" type="video/mp4">
+           <source src="/media/tuco_bites_coin.webm" type="video/webm">
+           <source src="/media/tuco_bites_coin.ogg" type="video/ogg">
+        </video>
+
+        <video class="tuco_bites_coin small" loop preload="none">
+           <source src="/media/tuco_bites_coin_small.mp4" type="video/mp4">
+           <source src="/media/tuco_bites_coin_small.webm" type="video/webm">
+           <source src="/media/tuco_bites_coin_small.ogg" type="video/ogg">
+        </video>
+"""
 
 current_h = None
 for i in range(0, len(content_html_lines)):
@@ -91,3 +115,37 @@ body = u"""
 
 home = u'\n'.join((header, body, footer))
 open('home.html', 'w').write(home.encode('utf-8'))
+
+anim = header_raw + """
+    <body class="container-fluid" id="anim">
+
+      <div class="row" id="embed">
+        <div class="col col-xs-12">
+          <iframe src="https://www.youtube.com/embed/20Uxhxx22pc" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-xs-12">
+          <a class="btn btn-primary" href="/home/#getting-in">Get in!</a>
+          <a class="btn btn-default" href="/home/">Specs</a>
+        </div>
+      </div>
+
+    </body>
+
+</html>"""
+open('anim.html', 'w').write(anim.encode('utf-8'))
+
+kisschain = header_raw + """
+    <body class="container" id="kisschain">
+
+"""
+kisschain += markdown2.markdown(open('misc/kisschain.md').read().decode('utf-8'))
+kisschain += """
+
+    </body>
+
+</html>"""
+kisschain = kisschain.replace('<title>Checkoin</title>', '<title>KissChain</title>')
+open('misc/kisschain.html', 'w').write(kisschain.encode('utf-8'))
