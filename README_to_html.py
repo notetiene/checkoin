@@ -71,6 +71,7 @@ responsive_images = (u'media/scan.gif',
 
 content_html = u'\n'.join(content_html_lines)
 content_html = content_html.replace(u'pre-RFC_VERSION', version)
+content_html = content_html.replace('misc/kisschain.md', '/misc/kisschain/')
 
 for i in responsive_images:
     content_html = content_html.replace(
