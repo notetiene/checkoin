@@ -16,7 +16,7 @@ If some transactions are sent too late, not reaching the totality (99.9%) of the
 
 In the case of a node entering "cacophony mode" because being in the fringe of the network or out-of-sync (thus not receiving transactions on proper time), other nodes won't be in "cacophony mode", so the node will find itself lonely by not receiving any/enough different block versions (along with their signed hashes), therefore it will know that there is no cacophony, but bad QoS or configuration, this will need to be fixed by resync NTP, re-configure, change peers, sys-admin intervention, etc. They'll have to catch up quickly not to miss their chance to win a block discovery.
 
-In the case of a block not being claimed because of the winner node being down, the network would enter in "cacophony mode" as well, but figure out that it is consistent, therefore simply blacklisting the winning public-reward-key of the unclaimed block, until it gets unlocked by a dedicated "unlock message", signed with its corresponding private-reward-key when the node gets back online.
+In the case of a block not being claimed because of the winner node being down or under DDoS attack (7), the network would enter in "cacophony mode" as well, but figure out that it is consistent, therefore simply blacklisting the winning public-reward-key of the unclaimed block, until it gets unlocked by a dedicated "unlock message", signed with its corresponding private-reward-key when the node gets back online.
 
 ## Notes
 
@@ -26,6 +26,7 @@ In the case of a block not being claimed because of the winner node being down, 
 4. Quarantine duration should be incremental for each ban, e.g.: 3h, 12h, 72h, 2 weeks, 4 months, one year, etc.
 5. Any node signing more than one different block for the same head number will be banned (4) and its data ignored.
 6. In "cacophony mode" marginal blocks that are not widespread and lacking transactions number should be ignored, they are more likely to be on the fringe of the network, not having received some transactions on time because of QoS-like issues.
+7. In case of DDoS attack, the victim node should stop broadcasting transactions until the attack stops, not to be wrongfully banned for broadcast lag. In case of block discovery reward, if the price of the coin worth it, node admins should anticipate such cases by setting up rescue IP(s) and/or VPN, this foresight might be considered part of the KissChain QoS requirements. Or, as all nodes compute the same data, nodes could be cloned with the same reward-key(s), as ghosts or active nodes, to relieve each other in case of an attack.
 
 ## Authors
 
